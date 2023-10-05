@@ -1,0 +1,64 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "GUI_QuanLyNhanVien/1.0.0": {
+        "dependencies": {
+          "BUS_QuanLyNhanVien": "1.0.0",
+          "DTO_QuanLyNhanVien": "1.0.0"
+        },
+        "runtime": {
+          "GUI_QuanLyNhanVien.dll": {}
+        }
+      },
+      "BUS_QuanLyNhanVien/1.0.0": {
+        "dependencies": {
+          "DAL_QuanLyNhanVien": "1.0.0",
+          "DTO_QuanLyNhanVien": "1.0.0"
+        },
+        "runtime": {
+          "BUS_QuanLyNhanVien.dll": {}
+        }
+      },
+      "DAL_QuanLyNhanVien/1.0.0": {
+        "dependencies": {
+          "DTO_QuanLyNhanVien": "1.0.0"
+        },
+        "runtime": {
+          "DAL_QuanLyNhanVien.dll": {}
+        }
+      },
+      "DTO_QuanLyNhanVien/1.0.0": {
+        "runtime": {
+          "DTO_QuanLyNhanVien.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "GUI_QuanLyNhanVien/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BUS_QuanLyNhanVien/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DAL_QuanLyNhanVien/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DTO_QuanLyNhanVien/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

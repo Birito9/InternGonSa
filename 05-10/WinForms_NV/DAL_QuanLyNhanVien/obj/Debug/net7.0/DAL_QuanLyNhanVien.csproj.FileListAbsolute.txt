@@ -1,0 +1,15 @@
+D:\Intern\WinForms_NV\DAL_QuanLyNhanVien\bin\Debug\net7.0\DAL_QuanLyNhanVien.deps.json
+D:\Intern\WinForms_NV\DAL_QuanLyNhanVien\bin\Debug\net7.0\DAL_QuanLyNhanVien.dll
+D:\Intern\WinForms_NV\DAL_QuanLyNhanVien\bin\Debug\net7.0\DAL_QuanLyNhanVien.pdb
+D:\Intern\WinForms_NV\DAL_QuanLyNhanVien\bin\Debug\net7.0\DTO_QuanLyNhanVien.dll
+D:\Intern\WinForms_NV\DAL_QuanLyNhanVien\bin\Debug\net7.0\DTO_QuanLyNhanVien.pdb
+D:\Intern\WinForms_NV\DAL_QuanLyNhanVien\obj\Debug\net7.0\DAL_QuanLyNhanVien.csproj.AssemblyReference.cache
+D:\Intern\WinForms_NV\DAL_QuanLyNhanVien\obj\Debug\net7.0\DAL_QuanLyNhanVien.GeneratedMSBuildEditorConfig.editorconfig
+D:\Intern\WinForms_NV\DAL_QuanLyNhanVien\obj\Debug\net7.0\DAL_QuanLyNhanVien.AssemblyInfoInputs.cache
+D:\Intern\WinForms_NV\DAL_QuanLyNhanVien\obj\Debug\net7.0\DAL_QuanLyNhanVien.AssemblyInfo.cs
+D:\Intern\WinForms_NV\DAL_QuanLyNhanVien\obj\Debug\net7.0\DAL_QuanLyNhanVien.csproj.CoreCompileInputs.cache
+D:\Intern\WinForms_NV\DAL_QuanLyNhanVien\obj\Debug\net7.0\DAL_QuanLyNhanVien.csproj.CopyComplete
+D:\Intern\WinForms_NV\DAL_QuanLyNhanVien\obj\Debug\net7.0\DAL_QuanLyNhanVien.dll
+D:\Intern\WinForms_NV\DAL_QuanLyNhanVien\obj\Debug\net7.0\refint\DAL_QuanLyNhanVien.dll
+D:\Intern\WinForms_NV\DAL_QuanLyNhanVien\obj\Debug\net7.0\DAL_QuanLyNhanVien.pdb
+D:\Intern\WinForms_NV\DAL_QuanLyNhanVien\obj\Debug\net7.0\ref\DAL_QuanLyNhanVien.dll
