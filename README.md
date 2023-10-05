@@ -4,7 +4,7 @@ Task thực tập được giao tại Gonsa
 
 Đây là báo cáo nhiệm vụ thực tập của tôi tại Gonsa. Trong suốt thời gian này, tôi đã tham gia và hoàn thành một số nhiệm vụ được giao
 
-![messenger](https://imgur.com/KHTy6QH)
+![messenger]([https://imgur.com/KHTy6QH](https://i.imgur.com/ibBXpBl.png))
 
 
 ### Chức năng chính
