@@ -12,7 +12,6 @@ namespace GUI_NhanVien
         public MainForm()
         {
             InitializeComponent();
-            //uc_QuanLyNhanVien1.AddDataSample();
         }
     }
 }

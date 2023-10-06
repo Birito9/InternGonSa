@@ -318,7 +318,7 @@ namespace GUI_QuanLyNhanVien
                         int colCount = worksheet.Dimension.Columns;
 
                         // Duyệt qua từng dòng trong sheet và đưa dữ liệu vào danh sách hiện có
-                        for (int row = 3; row <= rowCount; row++) // Bắt đầu từ hàng thứ hai (do hàng đầu tiên là tiêu đề)
+                        for (int row = 3; row <= rowCount; row++) // Bắt đầu từ hàng thứ ba 
                         {
                             NhanVienDTO nhanVien = new NhanVienDTO();
                             nhanVien.MaNhanVien = worksheet.Cells[row, 1].Value.ToString();
@@ -434,6 +434,23 @@ namespace GUI_QuanLyNhanVien
 
             // Nếu không có lỗi, trả về true để xác nhận thông tin hợp lệ
             return true;
+        }
+
+        private void dgvNhanVien_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            // Lấy số thứ tự của hàng (bắt đầu từ 1)
+            int rowIndex = e.RowIndex + 1;
+
+            // Tạo một brush để vẽ số thứ tự
+            using (SolidBrush brush = new SolidBrush(dgvNhanVien.RowHeadersDefaultCellStyle.ForeColor))
+            {
+                // Xác định vị trí để vẽ số thứ tự trên hàng tiêu đề
+                float x = e.RowBounds.Left + 10; // Điều chỉnh vị trí xuất phát theo ý muốn
+                float y = e.RowBounds.Top + (e.RowBounds.Height - e.InheritedRowStyle.Font.Height) / 2;
+
+                // Vẽ số thứ tự
+                e.Graphics.DrawString(rowIndex.ToString(), e.InheritedRowStyle.Font, brush, x, y);
+            }
         }
     }
 }

@@ -237,6 +237,22 @@
           }
         }
       },
+      "RestSharp/110.2.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Text.Json": "7.0.2"
+        },
+        "compile": {
+          "lib/net7.0/RestSharp.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/RestSharp.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.Drawing.Common/7.0.0": {
         "type": "package",
         "dependencies": {
@@ -347,7 +363,7 @@
           }
         }
       },
-      "System.Text.Json/7.0.0": {
+      "System.Text.Json/7.0.2": {
         "type": "package",
         "dependencies": {
           "System.Text.Encodings.Web": "7.0.0"
@@ -366,41 +382,42 @@
           "buildTransitive/net6.0/System.Text.Json.targets": {}
         }
       },
-      "BUS_QuanLyNhanVien/1.0.0": {
+      "BLL/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "DAL_QuanLyNhanVien": "1.0.0",
-          "DTO_QuanLyNhanVien": "1.0.0"
+          "DAL": "1.0.0",
+          "DTO": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/BUS_QuanLyNhanVien.dll": {}
+          "bin/placeholder/BLL.dll": {}
         },
         "runtime": {
-          "bin/placeholder/BUS_QuanLyNhanVien.dll": {}
+          "bin/placeholder/BLL.dll": {}
         }
       },
-      "DAL_QuanLyNhanVien/1.0.0": {
+      "DAL/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "DTO_QuanLyNhanVien": "1.0.0"
+          "DTO": "1.0.0",
+          "RestSharp": "110.2.0"
         },
         "compile": {
-          "bin/placeholder/DAL_QuanLyNhanVien.dll": {}
+          "bin/placeholder/DAL.dll": {}
         },
         "runtime": {
-          "bin/placeholder/DAL_QuanLyNhanVien.dll": {}
+          "bin/placeholder/DAL.dll": {}
         }
       },
-      "DTO_QuanLyNhanVien/1.0.0": {
+      "DTO/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "compile": {
-          "bin/placeholder/DTO_QuanLyNhanVien.dll": {}
+          "bin/placeholder/DTO.dll": {}
         },
         "runtime": {
-          "bin/placeholder/DTO_QuanLyNhanVien.dll": {}
+          "bin/placeholder/DTO.dll": {}
         }
       }
     }
@@ -744,6 +761,26 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "RestSharp/110.2.0": {
+      "sha512": "FXGw0IMcqY7yO/hzS9QrD3iNswNgb9UxJnxWmfOxmGs4kRlZWqdtBoGPLuhlbgsDzX1RFo4WKui8TGGKXWKalw==",
+      "type": "package",
+      "path": "restsharp/110.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net471/RestSharp.dll",
+        "lib/net471/RestSharp.xml",
+        "lib/net6.0/RestSharp.dll",
+        "lib/net6.0/RestSharp.xml",
+        "lib/net7.0/RestSharp.dll",
+        "lib/net7.0/RestSharp.xml",
+        "lib/netstandard2.0/RestSharp.dll",
+        "lib/netstandard2.0/RestSharp.xml",
+        "restsharp.110.2.0.nupkg.sha512",
+        "restsharp.nuspec",
+        "restsharp.png"
+      ]
+    },
     "System.Drawing.Common/7.0.0": {
       "sha512": "KIX+oBU38pxkKPxvLcLfIkOV5Ien8ReN78wro7OF5/erwcmortzeFx+iBswlh2Vz6gVne0khocQudGwaO1Ey6A==",
       "type": "package",
@@ -909,10 +946,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Text.Json/7.0.0": {
-      "sha512": "DaGSsVqKsn/ia6RG8frjwmJonfos0srquhw09TlT8KRw5I43E+4gs+/bZj4K0vShJ5H9imCuXupb4RmS+dBy3w==",
+    "System.Text.Json/7.0.2": {
+      "sha512": "/LZf/JrGyilojqwpaywb+sSz8Tew7ij4K/Sk+UW8AKfAK7KRhR6mKpKtTm06cYA7bCpGTWfYksIW+mVsdxPegQ==",
       "type": "package",
-      "path": "system.text.json/7.0.0",
+      "path": "system.text.json/7.0.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -975,32 +1012,33 @@
         "lib/net7.0/System.Text.Json.xml",
         "lib/netstandard2.0/System.Text.Json.dll",
         "lib/netstandard2.0/System.Text.Json.xml",
-        "system.text.json.7.0.0.nupkg.sha512",
+        "system.text.json.7.0.2.nupkg.sha512",
         "system.text.json.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
-    "BUS_QuanLyNhanVien/1.0.0": {
+    "BLL/1.0.0": {
       "type": "project",
-      "path": "../BUS_QuanLyNhanVien/BUS_QuanLyNhanVien.csproj",
-      "msbuildProject": "../BUS_QuanLyNhanVien/BUS_QuanLyNhanVien.csproj"
+      "path": "../BUS_QuanLyNhanVien/BLL.csproj",
+      "msbuildProject": "../BUS_QuanLyNhanVien/BLL.csproj"
     },
-    "DAL_QuanLyNhanVien/1.0.0": {
+    "DAL/1.0.0": {
       "type": "project",
-      "path": "../DAL_QuanLyNhanVien/DAL_QuanLyNhanVien.csproj",
-      "msbuildProject": "../DAL_QuanLyNhanVien/DAL_QuanLyNhanVien.csproj"
+      "path": "../DAL_QuanLyNhanVien/DAL.csproj",
+      "msbuildProject": "../DAL_QuanLyNhanVien/DAL.csproj"
     },
-    "DTO_QuanLyNhanVien/1.0.0": {
+    "DTO/1.0.0": {
       "type": "project",
-      "path": "../DTO_QuanLyNhanVien/DTO_QuanLyNhanVien.csproj",
-      "msbuildProject": "../DTO_QuanLyNhanVien/DTO_QuanLyNhanVien.csproj"
+      "path": "../DTO_QuanLyNhanVien/DTO.csproj",
+      "msbuildProject": "../DTO_QuanLyNhanVien/DTO.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0-windows7.0": [
-      "BUS_QuanLyNhanVien >= 1.0.0",
-      "DTO_QuanLyNhanVien >= 1.0.0",
-      "EPPlus >= 6.2.10"
+      "BLL >= 1.0.0",
+      "DTO >= 1.0.0",
+      "EPPlus >= 6.2.10",
+      "RestSharp >= 110.2.0"
     ]
   },
   "packageFolders": {
@@ -1010,11 +1048,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Intern\\WinForms_NV\\GUI_DanhSachNhanVien\\GUI_QuanLyNhanVien.csproj",
-      "projectName": "GUI_QuanLyNhanVien",
-      "projectPath": "D:\\Intern\\WinForms_NV\\GUI_DanhSachNhanVien\\GUI_QuanLyNhanVien.csproj",
+      "projectUniqueName": "D:\\Intern\\GitHub\\repo\\InternGonSa\\05-10\\WinForms_NV\\GUI_DanhSachNhanVien\\GUI.csproj",
+      "projectName": "GUI",
+      "projectPath": "D:\\Intern\\GitHub\\repo\\InternGonSa\\05-10\\WinForms_NV\\GUI_DanhSachNhanVien\\GUI.csproj",
       "packagesPath": "C:\\Users\\nguye\\.nuget\\packages\\",
-      "outputPath": "D:\\Intern\\WinForms_NV\\GUI_DanhSachNhanVien\\obj\\",
+      "outputPath": "D:\\Intern\\GitHub\\repo\\InternGonSa\\05-10\\WinForms_NV\\GUI_DanhSachNhanVien\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1036,11 +1074,11 @@
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "projectReferences": {
-            "D:\\Intern\\WinForms_NV\\BUS_QuanLyNhanVien\\BUS_QuanLyNhanVien.csproj": {
-              "projectPath": "D:\\Intern\\WinForms_NV\\BUS_QuanLyNhanVien\\BUS_QuanLyNhanVien.csproj"
+            "D:\\Intern\\GitHub\\repo\\InternGonSa\\05-10\\WinForms_NV\\BUS_QuanLyNhanVien\\BLL.csproj": {
+              "projectPath": "D:\\Intern\\GitHub\\repo\\InternGonSa\\05-10\\WinForms_NV\\BUS_QuanLyNhanVien\\BLL.csproj"
             },
-            "D:\\Intern\\WinForms_NV\\DTO_QuanLyNhanVien\\DTO_QuanLyNhanVien.csproj": {
-              "projectPath": "D:\\Intern\\WinForms_NV\\DTO_QuanLyNhanVien\\DTO_QuanLyNhanVien.csproj"
+            "D:\\Intern\\GitHub\\repo\\InternGonSa\\05-10\\WinForms_NV\\DTO_QuanLyNhanVien\\DTO.csproj": {
+              "projectPath": "D:\\Intern\\GitHub\\repo\\InternGonSa\\05-10\\WinForms_NV\\DTO_QuanLyNhanVien\\DTO.csproj"
             }
           }
         }
@@ -1058,6 +1096,10 @@
           "EPPlus": {
             "target": "Package",
             "version": "[6.2.10, )"
+          },
+          "RestSharp": {
+            "target": "Package",
+            "version": "[110.2.0, )"
           }
         },
         "imports": [

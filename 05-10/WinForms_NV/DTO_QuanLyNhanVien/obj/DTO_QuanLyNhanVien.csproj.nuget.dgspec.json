@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Intern\\WinForms_NV\\DTO_QuanLyNhanVien\\DTO_QuanLyNhanVien.csproj": {}
+    "D:\\Intern\\GitHub\\repo\\InternGonSa\\05-10\\WinForms_NV\\DTO_QuanLyNhanVien\\DTO_QuanLyNhanVien.csproj": {}
   },
   "projects": {
-    "D:\\Intern\\WinForms_NV\\DTO_QuanLyNhanVien\\DTO_QuanLyNhanVien.csproj": {
+    "D:\\Intern\\GitHub\\repo\\InternGonSa\\05-10\\WinForms_NV\\DTO_QuanLyNhanVien\\DTO_QuanLyNhanVien.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Intern\\WinForms_NV\\DTO_QuanLyNhanVien\\DTO_QuanLyNhanVien.csproj",
+        "projectUniqueName": "D:\\Intern\\GitHub\\repo\\InternGonSa\\05-10\\WinForms_NV\\DTO_QuanLyNhanVien\\DTO_QuanLyNhanVien.csproj",
         "projectName": "DTO_QuanLyNhanVien",
-        "projectPath": "D:\\Intern\\WinForms_NV\\DTO_QuanLyNhanVien\\DTO_QuanLyNhanVien.csproj",
+        "projectPath": "D:\\Intern\\GitHub\\repo\\InternGonSa\\05-10\\WinForms_NV\\DTO_QuanLyNhanVien\\DTO_QuanLyNhanVien.csproj",
         "packagesPath": "C:\\Users\\nguye\\.nuget\\packages\\",
-        "outputPath": "D:\\Intern\\WinForms_NV\\DTO_QuanLyNhanVien\\obj\\",
+        "outputPath": "D:\\Intern\\GitHub\\repo\\InternGonSa\\05-10\\WinForms_NV\\DTO_QuanLyNhanVien\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

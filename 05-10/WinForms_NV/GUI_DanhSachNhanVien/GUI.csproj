@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EPPlus" Version="6.2.10" />
+    <PackageReference Include="RestSharp" Version="110.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BUS_QuanLyNhanVien\BLL.csproj" />
+    <ProjectReference Include="..\DTO_QuanLyNhanVien\DTO.csproj" />
+  </ItemGroup>
+
+</Project>

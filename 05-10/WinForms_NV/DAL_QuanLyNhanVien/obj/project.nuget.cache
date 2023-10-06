@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "aWwXmBTu9TOnxH++6XXSULDsS07bAj9ztOa5n/qNeRSEpj7/CvWdUun5D6G25wyRIA1cDO8kT1WvrybDgFLvJw==",
+  "dgSpecHash": "ZwOTkOEsKTh++cMtcV5ctKE3zyi1xR0zJsf61pjWvn0Xq39Ftt1CtUpbPaVc+PQ0OqnmY7P41CxyxzAJxXYAIA==",
   "success": true,
-  "projectFilePath": "D:\\Intern\\WinForms_NV\\DAL_QuanLyNhanVien\\DAL_QuanLyNhanVien.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\Intern\\GitHub\\repo\\InternGonSa\\05-10\\WinForms_NV\\DAL_QuanLyNhanVien\\DAL.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nguye\\.nuget\\packages\\restsharp\\110.2.0\\restsharp.110.2.0.nupkg.sha512",
+    "C:\\Users\\nguye\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
+    "C:\\Users\\nguye\\.nuget\\packages\\system.text.json\\7.0.2\\system.text.json.7.0.2.nupkg.sha512"
+  ],
   "logs": []
 }
