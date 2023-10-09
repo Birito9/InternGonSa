@@ -490,13 +490,33 @@ namespace FormOrderData_TrangThaiGiaoHang
             // Lưu từng dòng dữ liệu đã mã hóa vào AppSettings
             for (int i = 0; i < dataList.Count; i++)
             {
-                config.AppSettings.Settings.Add("EncryptedData_" + i, dataList[i].MaTrangThaiGiaoHang + "|" + dataList[i].TenTrangThai);
+                config.AppSettings.Settings.Add(dataList[i].MaTrangThaiGiaoHang, dataList[i].TenTrangThai);
             }
 
             // Lưu thay đổi
             config.Save(ConfigurationSaveMode.Modified);
             ConfigurationManager.RefreshSection(config.AppSettings.SectionInformation.Name);
         }
+
+        // Lấy dữ liệu đã mã hóa từ tệp App.Config
+        private List<OrderData_TrangThaiGiaoHang> GetEncryptedDataFromConfig()
+        {
+            List<OrderData_TrangThaiGiaoHang> encryptedDataList = new List<OrderData_TrangThaiGiaoHang>();
+            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+
+            foreach (string key in config.AppSettings.Settings.AllKeys)
+            {
+                string value = config.AppSettings.Settings[key].Value;
+                encryptedDataList.Add(new OrderData_TrangThaiGiaoHang
+                {
+                    MaTrangThaiGiaoHang = key,
+                    TenTrangThai = value
+                });
+            }
+
+            return encryptedDataList;
+        }
+
 
         private void btnDecrypt_Click(object sender, EventArgs e)
         {
@@ -544,27 +564,27 @@ namespace FormOrderData_TrangThaiGiaoHang
         }
 
 
-        // Lấy dữ liệu đã mã hóa từ tệp App.Config
-        private List<OrderData_TrangThaiGiaoHang> GetEncryptedDataFromConfig()
-        {
-            List<OrderData_TrangThaiGiaoHang> encryptedDataList = new List<OrderData_TrangThaiGiaoHang>();
-            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+        //// Lấy dữ liệu đã mã hóa từ tệp App.Config
+        //private List<OrderData_TrangThaiGiaoHang> GetEncryptedDataFromConfig()
+        //{
+        //    List<OrderData_TrangThaiGiaoHang> encryptedDataList = new List<OrderData_TrangThaiGiaoHang>();
+        //    Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
 
-            foreach (string key in config.AppSettings.Settings.AllKeys)
-            {
-                string[] encryptedData = config.AppSettings.Settings[key].Value.Split('|');
-                if (encryptedData.Length == 2)
-                {
-                    encryptedDataList.Add(new OrderData_TrangThaiGiaoHang
-                    {
-                        MaTrangThaiGiaoHang = encryptedData[0],
-                        TenTrangThai = encryptedData[1]
-                    });
-                }
-            }
+        //    foreach (string key in config.AppSettings.Settings.AllKeys)
+        //    {
+        //        string[] encryptedData = config.AppSettings.Settings[key].Value.Split('|');
+        //        if (encryptedData.Length == 2)
+        //        {
+        //            encryptedDataList.Add(new OrderData_TrangThaiGiaoHang
+        //            {
+        //                MaTrangThaiGiaoHang = encryptedData[0],
+        //                TenTrangThai = encryptedData[1]
+        //            });
+        //        }
+        //    }
 
-            return encryptedDataList;
-        }
+        //    return encryptedDataList;
+        //}
 
         // Lưu dữ liệu đã giải mã vào tệp văn bản
         private void SaveDecryptedDataToTextFile(List<OrderData_TrangThaiGiaoHang> dataList, string filePath)
