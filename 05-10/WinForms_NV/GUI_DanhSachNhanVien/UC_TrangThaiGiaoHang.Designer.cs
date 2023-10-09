@@ -44,17 +44,20 @@
             txtMaTrangThaiGiaoHang = new TextBox();
             btnNhap = new Button();
             btnXuat = new Button();
+            btnEncrypt = new Button();
+            btnDecrypt = new Button();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvFormOrderTrangThaiGiaoHang).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
-            tableLayoutPanel1.ColumnCount = 4;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.ColumnCount = 5;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
             tableLayoutPanel1.Controls.Add(dgvFormOrderTrangThaiGiaoHang, 0, 0);
             tableLayoutPanel1.Controls.Add(btnThem, 0, 3);
             tableLayoutPanel1.Controls.Add(btnXoa, 1, 3);
@@ -67,6 +70,8 @@
             tableLayoutPanel1.Controls.Add(txtMaTrangThaiGiaoHang, 0, 2);
             tableLayoutPanel1.Controls.Add(btnNhap, 3, 2);
             tableLayoutPanel1.Controls.Add(btnXuat, 3, 3);
+            tableLayoutPanel1.Controls.Add(btnEncrypt, 4, 2);
+            tableLayoutPanel1.Controls.Add(btnDecrypt, 4, 3);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -83,7 +88,7 @@
             dgvFormOrderTrangThaiGiaoHang.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvFormOrderTrangThaiGiaoHang.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvFormOrderTrangThaiGiaoHang.Columns.AddRange(new DataGridViewColumn[] { MaTrangThaiGiaoHang, TenTrangThai, MoTa });
-            tableLayoutPanel1.SetColumnSpan(dgvFormOrderTrangThaiGiaoHang, 4);
+            tableLayoutPanel1.SetColumnSpan(dgvFormOrderTrangThaiGiaoHang, 5);
             dgvFormOrderTrangThaiGiaoHang.Dock = DockStyle.Fill;
             dgvFormOrderTrangThaiGiaoHang.Location = new Point(3, 3);
             dgvFormOrderTrangThaiGiaoHang.Name = "dgvFormOrderTrangThaiGiaoHang";
@@ -121,7 +126,7 @@
             btnThem.Location = new Point(50, 517);
             btnThem.Margin = new Padding(50, 20, 50, 20);
             btnThem.Name = "btnThem";
-            btnThem.Size = new Size(142, 53);
+            btnThem.Size = new Size(94, 53);
             btnThem.TabIndex = 1;
             btnThem.Text = "Thêm";
             btnThem.UseVisualStyleBackColor = true;
@@ -130,10 +135,10 @@
             // btnXoa
             // 
             btnXoa.Dock = DockStyle.Fill;
-            btnXoa.Location = new Point(292, 517);
+            btnXoa.Location = new Point(244, 517);
             btnXoa.Margin = new Padding(50, 20, 50, 20);
             btnXoa.Name = "btnXoa";
-            btnXoa.Size = new Size(142, 53);
+            btnXoa.Size = new Size(94, 53);
             btnXoa.TabIndex = 2;
             btnXoa.Text = "Xóa";
             btnXoa.UseVisualStyleBackColor = true;
@@ -142,10 +147,10 @@
             // btnSua
             // 
             btnSua.Dock = DockStyle.Fill;
-            btnSua.Location = new Point(534, 517);
+            btnSua.Location = new Point(438, 517);
             btnSua.Margin = new Padding(50, 20, 50, 20);
             btnSua.Name = "btnSua";
-            btnSua.Size = new Size(142, 53);
+            btnSua.Size = new Size(94, 53);
             btnSua.TabIndex = 3;
             btnSua.Text = "Sửa";
             btnSua.UseVisualStyleBackColor = true;
@@ -154,19 +159,19 @@
             // txtTenTrangThai
             // 
             txtTenTrangThai.Dock = DockStyle.Fill;
-            txtTenTrangThai.Location = new Point(272, 435);
+            txtTenTrangThai.Location = new Point(224, 435);
             txtTenTrangThai.Margin = new Padding(30);
             txtTenTrangThai.Name = "txtTenTrangThai";
-            txtTenTrangThai.Size = new Size(182, 31);
+            txtTenTrangThai.Size = new Size(134, 31);
             txtTenTrangThai.TabIndex = 5;
             // 
             // txtMoTa
             // 
             txtMoTa.Dock = DockStyle.Fill;
-            txtMoTa.Location = new Point(514, 435);
+            txtMoTa.Location = new Point(418, 435);
             txtMoTa.Margin = new Padding(30);
             txtMoTa.Name = "txtMoTa";
-            txtMoTa.Size = new Size(182, 31);
+            txtMoTa.Size = new Size(134, 31);
             txtMoTa.TabIndex = 6;
             // 
             // label1
@@ -177,7 +182,7 @@
             label1.Location = new Point(10, 366);
             label1.Margin = new Padding(10);
             label1.Name = "label1";
-            label1.Size = new Size(222, 29);
+            label1.Size = new Size(174, 29);
             label1.TabIndex = 7;
             label1.Text = "Mã Trạng Thái";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -187,10 +192,10 @@
             label2.AutoSize = true;
             label2.Dock = DockStyle.Fill;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(252, 366);
+            label2.Location = new Point(204, 366);
             label2.Margin = new Padding(10);
             label2.Name = "label2";
-            label2.Size = new Size(222, 29);
+            label2.Size = new Size(174, 29);
             label2.TabIndex = 8;
             label2.Text = "Tên Trạng Thái";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -200,10 +205,10 @@
             label3.AutoSize = true;
             label3.Dock = DockStyle.Fill;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(494, 366);
+            label3.Location = new Point(398, 366);
             label3.Margin = new Padding(10);
             label3.Name = "label3";
-            label3.Size = new Size(222, 29);
+            label3.Size = new Size(174, 29);
             label3.TabIndex = 9;
             label3.Text = "Mô Tả";
             label3.TextAlign = ContentAlignment.MiddleCenter;
@@ -214,16 +219,16 @@
             txtMaTrangThaiGiaoHang.Location = new Point(30, 435);
             txtMaTrangThaiGiaoHang.Margin = new Padding(30);
             txtMaTrangThaiGiaoHang.Name = "txtMaTrangThaiGiaoHang";
-            txtMaTrangThaiGiaoHang.Size = new Size(182, 31);
+            txtMaTrangThaiGiaoHang.Size = new Size(134, 31);
             txtMaTrangThaiGiaoHang.TabIndex = 4;
             // 
             // btnNhap
             // 
             btnNhap.Dock = DockStyle.Fill;
-            btnNhap.Location = new Point(776, 425);
+            btnNhap.Location = new Point(632, 425);
             btnNhap.Margin = new Padding(50, 20, 50, 20);
             btnNhap.Name = "btnNhap";
-            btnNhap.Size = new Size(144, 52);
+            btnNhap.Size = new Size(94, 52);
             btnNhap.TabIndex = 10;
             btnNhap.Text = "Nhập";
             btnNhap.UseVisualStyleBackColor = true;
@@ -232,14 +237,38 @@
             // btnXuat
             // 
             btnXuat.Dock = DockStyle.Fill;
-            btnXuat.Location = new Point(776, 517);
+            btnXuat.Location = new Point(632, 517);
             btnXuat.Margin = new Padding(50, 20, 50, 20);
             btnXuat.Name = "btnXuat";
-            btnXuat.Size = new Size(144, 53);
+            btnXuat.Size = new Size(94, 53);
             btnXuat.TabIndex = 11;
             btnXuat.Text = "Xuất";
             btnXuat.UseVisualStyleBackColor = true;
             btnXuat.Click += btnXuat_Click;
+            // 
+            // btnEncrypt
+            // 
+            btnEncrypt.Dock = DockStyle.Fill;
+            btnEncrypt.Location = new Point(826, 425);
+            btnEncrypt.Margin = new Padding(50, 20, 50, 20);
+            btnEncrypt.Name = "btnEncrypt";
+            btnEncrypt.Size = new Size(94, 52);
+            btnEncrypt.TabIndex = 12;
+            btnEncrypt.Text = "Mã Hóa";
+            btnEncrypt.UseVisualStyleBackColor = true;
+            btnEncrypt.Click += btnEncrypt_Click;
+            // 
+            // btnDecrypt
+            // 
+            btnDecrypt.Dock = DockStyle.Fill;
+            btnDecrypt.Location = new Point(826, 517);
+            btnDecrypt.Margin = new Padding(50, 20, 50, 20);
+            btnDecrypt.Name = "btnDecrypt";
+            btnDecrypt.Size = new Size(94, 53);
+            btnDecrypt.TabIndex = 13;
+            btnDecrypt.Text = "Giải Mã";
+            btnDecrypt.UseVisualStyleBackColor = true;
+            btnDecrypt.Click += btnDecrypt_Click;
             // 
             // UC_TrangThaiGiaoHang
             // 
@@ -272,5 +301,7 @@
         private DataGridViewTextBoxColumn MaTrangThaiGiaoHang;
         private DataGridViewTextBoxColumn TenTrangThai;
         private DataGridViewTextBoxColumn MoTa;
+        private Button btnEncrypt;
+        private Button btnDecrypt;
     }
 }

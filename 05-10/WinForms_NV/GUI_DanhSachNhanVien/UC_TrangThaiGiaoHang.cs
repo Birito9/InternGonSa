@@ -4,6 +4,11 @@ using BLL; // Import namespace của BLL để sử dụng BLL_TrangThaiGiaoHang
 using DTO; // Import namespace của DTO để sử dụng OrderData_TrangThaiGiaoHang
 using OfficeOpenXml.Style;
 using OfficeOpenXml;
+using System.Security.Cryptography;
+using System.Text;
+using System.Xml;
+using System.Configuration;
+using Newtonsoft.Json;
 
 namespace FormOrderData_TrangThaiGiaoHang
 {
@@ -377,5 +382,244 @@ namespace FormOrderData_TrangThaiGiaoHang
                 e.Graphics.DrawString(rowIndex.ToString(), e.InheritedRowStyle.Font, brush, x, y);
             }
         }
+
+        //private void btnEncrypt_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        //Lấy danh sách dữ liệu hiện tại từ DataGridView
+        //        List<OrderData_TrangThaiGiaoHang> dataList = (List<OrderData_TrangThaiGiaoHang>)dgvFormOrderTrangThaiGiaoHang.DataSource;
+
+        //        if (dataList != null)
+        //        {
+        //            foreach (var item in dataList)
+        //            {
+        //                //Mã hóa MaTrangThaiGiaoHang
+        //                item.MaTrangThaiGiaoHang = Encrypt(item.MaTrangThaiGiaoHang);
+
+        //                //Mã hóa TenTrangThai
+        //                item.TenTrangThai = Encrypt(item.TenTrangThai);
+        //            }
+
+        //            //Cập nhật lại DataGridView
+        //            dgvFormOrderTrangThaiGiaoHang.DataSource = null; // Xóa dữ liệu hiện tại
+        //            dgvFormOrderTrangThaiGiaoHang.DataSource = dataList; // Gán danh sách mới
+
+        //            MessageBox.Show("Mã hóa dữ liệu thành công!");
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Lỗi khi mã hóa dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //}
+
+        //private void btnDecrypt_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        // Lấy danh sách dữ liệu hiện tại từ DataGridView
+        //        List<OrderData_TrangThaiGiaoHang> dataList = (List<OrderData_TrangThaiGiaoHang>)dgvFormOrderTrangThaiGiaoHang.DataSource;
+
+        //        if (dataList != null)
+        //        {
+        //            foreach (var item in dataList)
+        //            {
+        //                // Giải mã MaTrangThaiGiaoHang
+        //                item.MaTrangThaiGiaoHang = Decrypt(item.MaTrangThaiGiaoHang);
+
+        //                // Giải mã TenTrangThai
+        //                item.TenTrangThai = Decrypt(item.TenTrangThai);
+        //            }
+
+        //            // Cập nhật lại DataGridView
+        //            dgvFormOrderTrangThaiGiaoHang.DataSource = null; // Xóa dữ liệu hiện tại
+        //            dgvFormOrderTrangThaiGiaoHang.DataSource = dataList; // Gán danh sách mới
+
+        //            MessageBox.Show("Giải mã dữ liệu thành công!");
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Lỗi khi giải mã dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //}
+
+        private void btnEncrypt_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Lấy danh sách dữ liệu hiện tại từ DataGridView
+                List<OrderData_TrangThaiGiaoHang> dataList = (List<OrderData_TrangThaiGiaoHang>)dgvFormOrderTrangThaiGiaoHang.DataSource;
+
+                if (dataList != null)
+                {
+                    foreach (var item in dataList)
+                    {
+                        // Mã hóa MaTrangThaiGiaoHang
+                        item.MaTrangThaiGiaoHang = Encrypt(item.MaTrangThaiGiaoHang);
+
+                        // Mã hóa TenTrangThai
+                        item.TenTrangThai = Encrypt(item.TenTrangThai);
+                    }
+
+                    // Cập nhật lại DataGridView
+                    dgvFormOrderTrangThaiGiaoHang.DataSource = null; // Xóa dữ liệu hiện tại
+                    dgvFormOrderTrangThaiGiaoHang.DataSource = dataList; // Gán danh sách mới
+
+                    // Lưu dữ liệu đã mã hóa vào tệp App.Config
+                    SaveEncryptedDataToConfig(dataList);
+
+                    MessageBox.Show("Mã hóa dữ liệu thành công và lưu vào App.Config!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi mã hóa dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // Lưu dữ liệu đã mã hóa vào tệp App.Config
+        private void SaveEncryptedDataToConfig(List<OrderData_TrangThaiGiaoHang> dataList)
+        {
+            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+
+            // Xóa toàn bộ dữ liệu trong AppSettings
+            config.AppSettings.Settings.Clear();
+
+            // Lưu từng dòng dữ liệu đã mã hóa vào AppSettings
+            for (int i = 0; i < dataList.Count; i++)
+            {
+                config.AppSettings.Settings.Add("EncryptedData_" + i, dataList[i].MaTrangThaiGiaoHang + "|" + dataList[i].TenTrangThai);
+            }
+
+            // Lưu thay đổi
+            config.Save(ConfigurationSaveMode.Modified);
+            ConfigurationManager.RefreshSection(config.AppSettings.SectionInformation.Name);
+        }
+
+        private void btnDecrypt_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Lấy dữ liệu đã mã hóa từ tệp App.Config
+                List<OrderData_TrangThaiGiaoHang> encryptedDataList = GetEncryptedDataFromConfig();
+
+                if (encryptedDataList != null)
+                {
+                    foreach (var item in encryptedDataList)
+                    {
+                        // Giải mã MaTrangThaiGiaoHang
+                        item.MaTrangThaiGiaoHang = Decrypt(item.MaTrangThaiGiaoHang);
+
+                        // Giải mã TenTrangThai
+                        item.TenTrangThai = Decrypt(item.TenTrangThai);
+                    }
+
+                    // Hiển thị dữ liệu giải mã trong DataGridView
+                    dgvFormOrderTrangThaiGiaoHang.DataSource = null; // Xóa dữ liệu hiện tại
+                    dgvFormOrderTrangThaiGiaoHang.DataSource = encryptedDataList; // Gán danh sách đã giải mã
+
+                    // Hỏi người dùng vị trí lưu tệp văn bản đã giải mã
+                    SaveFileDialog saveFileDialog = new SaveFileDialog();
+                    saveFileDialog.Filter = "Text Files|*.txt";
+                    saveFileDialog.FileName = "DecryptedData.txt";
+                    saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        string filePath = saveFileDialog.FileName;
+
+                        // Lưu dữ liệu đã giải mã vào tệp văn bản
+                        SaveDecryptedDataToTextFile(encryptedDataList, filePath);
+
+                        MessageBox.Show("Giải mã dữ liệu thành công và lưu vào tệp văn bản!");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi giải mã dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        // Lấy dữ liệu đã mã hóa từ tệp App.Config
+        private List<OrderData_TrangThaiGiaoHang> GetEncryptedDataFromConfig()
+        {
+            List<OrderData_TrangThaiGiaoHang> encryptedDataList = new List<OrderData_TrangThaiGiaoHang>();
+            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+
+            foreach (string key in config.AppSettings.Settings.AllKeys)
+            {
+                string[] encryptedData = config.AppSettings.Settings[key].Value.Split('|');
+                if (encryptedData.Length == 2)
+                {
+                    encryptedDataList.Add(new OrderData_TrangThaiGiaoHang
+                    {
+                        MaTrangThaiGiaoHang = encryptedData[0],
+                        TenTrangThai = encryptedData[1]
+                    });
+                }
+            }
+
+            return encryptedDataList;
+        }
+
+        // Lưu dữ liệu đã giải mã vào tệp văn bản
+        private void SaveDecryptedDataToTextFile(List<OrderData_TrangThaiGiaoHang> dataList, string filePath)
+        {
+            using (StreamWriter writer = new StreamWriter(filePath))
+            {
+                foreach (var item in dataList)
+                {
+                    writer.WriteLine($"MaTrangThaiGiaoHang: {item.MaTrangThaiGiaoHang}, TenTrangThai: {item.TenTrangThai}");
+                }
+            }
+        }
+
+
+        // Hàm mã hóa văn bản sử dụng AES
+        private string Encrypt(string input)
+        {
+            using (Aes aesAlg = Aes.Create())
+            {
+                aesAlg.Key = Encoding.UTF8.GetBytes("1234567890123456"); // Thay thế bằng khóa mã hóa của bạn
+                aesAlg.IV = Encoding.UTF8.GetBytes("1234567890123456"); // Thay thế bằng vector khởi tạo của bạn
+
+                ICryptoTransform encryptor = aesAlg.CreateEncryptor(aesAlg.Key, aesAlg.IV);
+
+                using (MemoryStream msEncrypt = new MemoryStream())
+                {
+                    using (CryptoStream csEncrypt = new CryptoStream(msEncrypt, encryptor, CryptoStreamMode.Write))
+                    using (StreamWriter swEncrypt = new StreamWriter(csEncrypt))
+                    {
+                        swEncrypt.Write(input);
+                    }
+
+                    return Convert.ToBase64String(msEncrypt.ToArray());
+                }
+            }
+        }
+
+        // Hàm giải mã văn bản sử dụng AES
+        private string Decrypt(string cipherText)
+        {
+            using (Aes aesAlg = Aes.Create())
+            {
+                aesAlg.Key = Encoding.UTF8.GetBytes("1234567890123456"); // Thay thế bằng khóa mã hóa của bạn
+                aesAlg.IV = Encoding.UTF8.GetBytes("1234567890123456"); // Thay thế bằng vector khởi tạo của bạn
+
+                ICryptoTransform decryptor = aesAlg.CreateDecryptor(aesAlg.Key, aesAlg.IV);
+
+                using (MemoryStream msDecrypt = new MemoryStream(Convert.FromBase64String(cipherText)))
+                using (CryptoStream csDecrypt = new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read))
+                using (StreamReader srDecrypt = new StreamReader(csDecrypt))
+                {
+                    return srDecrypt.ReadToEnd();
+                }
+            }
+        }
     }
 }
+
