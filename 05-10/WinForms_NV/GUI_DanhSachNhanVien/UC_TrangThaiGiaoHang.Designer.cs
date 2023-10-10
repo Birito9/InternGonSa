@@ -115,6 +115,7 @@
             // 
             // MoTa
             // 
+            MoTa.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             MoTa.DataPropertyName = "MoTa";
             MoTa.HeaderText = "Mô Tả";
             MoTa.MinimumWidth = 8;
@@ -298,10 +299,10 @@
         private Label label3;
         private Button btnNhap;
         private Button btnXuat;
+        private Button btnEncrypt;
+        private Button btnDecrypt;
         private DataGridViewTextBoxColumn MaTrangThaiGiaoHang;
         private DataGridViewTextBoxColumn TenTrangThai;
         private DataGridViewTextBoxColumn MoTa;
-        private Button btnEncrypt;
-        private Button btnDecrypt;
     }
 }

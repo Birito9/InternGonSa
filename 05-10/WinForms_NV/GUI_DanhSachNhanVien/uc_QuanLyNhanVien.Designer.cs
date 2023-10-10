@@ -92,10 +92,12 @@
             // 
             // TenNhanVien
             // 
+            TenNhanVien.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             TenNhanVien.DataPropertyName = "TenNhanVien";
             TenNhanVien.HeaderText = "Tên Nhân Viên";
             TenNhanVien.MinimumWidth = 8;
             TenNhanVien.Name = "TenNhanVien";
+            TenNhanVien.Width = 160;
             // 
             // NgaySinh
             // 
@@ -106,24 +108,30 @@
             // 
             // Email
             // 
+            Email.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             Email.DataPropertyName = "Email";
             Email.HeaderText = "Email";
             Email.MinimumWidth = 8;
             Email.Name = "Email";
+            Email.Width = 90;
             // 
             // SDT
             // 
+            SDT.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             SDT.DataPropertyName = "SDT";
             SDT.HeaderText = "Số Điện Thoại";
             SDT.MinimumWidth = 8;
             SDT.Name = "SDT";
+            SDT.Width = 145;
             // 
             // DiaChi
             // 
+            DiaChi.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             DiaChi.DataPropertyName = "DiaChi";
             DiaChi.HeaderText = "Địa Chỉ";
             DiaChi.MinimumWidth = 8;
             DiaChi.Name = "DiaChi";
+            DiaChi.Width = 74;
             // 
             // tableLayoutPanel1
             // 

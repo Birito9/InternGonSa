@@ -383,68 +383,6 @@ namespace FormOrderData_TrangThaiGiaoHang
             }
         }
 
-        //private void btnEncrypt_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        //Lấy danh sách dữ liệu hiện tại từ DataGridView
-        //        List<OrderData_TrangThaiGiaoHang> dataList = (List<OrderData_TrangThaiGiaoHang>)dgvFormOrderTrangThaiGiaoHang.DataSource;
-
-        //        if (dataList != null)
-        //        {
-        //            foreach (var item in dataList)
-        //            {
-        //                //Mã hóa MaTrangThaiGiaoHang
-        //                item.MaTrangThaiGiaoHang = Encrypt(item.MaTrangThaiGiaoHang);
-
-        //                //Mã hóa TenTrangThai
-        //                item.TenTrangThai = Encrypt(item.TenTrangThai);
-        //            }
-
-        //            //Cập nhật lại DataGridView
-        //            dgvFormOrderTrangThaiGiaoHang.DataSource = null; // Xóa dữ liệu hiện tại
-        //            dgvFormOrderTrangThaiGiaoHang.DataSource = dataList; // Gán danh sách mới
-
-        //            MessageBox.Show("Mã hóa dữ liệu thành công!");
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Lỗi khi mã hóa dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-        //}
-
-        //private void btnDecrypt_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        // Lấy danh sách dữ liệu hiện tại từ DataGridView
-        //        List<OrderData_TrangThaiGiaoHang> dataList = (List<OrderData_TrangThaiGiaoHang>)dgvFormOrderTrangThaiGiaoHang.DataSource;
-
-        //        if (dataList != null)
-        //        {
-        //            foreach (var item in dataList)
-        //            {
-        //                // Giải mã MaTrangThaiGiaoHang
-        //                item.MaTrangThaiGiaoHang = Decrypt(item.MaTrangThaiGiaoHang);
-
-        //                // Giải mã TenTrangThai
-        //                item.TenTrangThai = Decrypt(item.TenTrangThai);
-        //            }
-
-        //            // Cập nhật lại DataGridView
-        //            dgvFormOrderTrangThaiGiaoHang.DataSource = null; // Xóa dữ liệu hiện tại
-        //            dgvFormOrderTrangThaiGiaoHang.DataSource = dataList; // Gán danh sách mới
-
-        //            MessageBox.Show("Giải mã dữ liệu thành công!");
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Lỗi khi giải mã dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-        //}
-
         private void btnEncrypt_Click(object sender, EventArgs e)
         {
             try
@@ -563,28 +501,6 @@ namespace FormOrderData_TrangThaiGiaoHang
             }
         }
 
-
-        //// Lấy dữ liệu đã mã hóa từ tệp App.Config
-        //private List<OrderData_TrangThaiGiaoHang> GetEncryptedDataFromConfig()
-        //{
-        //    List<OrderData_TrangThaiGiaoHang> encryptedDataList = new List<OrderData_TrangThaiGiaoHang>();
-        //    Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-
-        //    foreach (string key in config.AppSettings.Settings.AllKeys)
-        //    {
-        //        string[] encryptedData = config.AppSettings.Settings[key].Value.Split('|');
-        //        if (encryptedData.Length == 2)
-        //        {
-        //            encryptedDataList.Add(new OrderData_TrangThaiGiaoHang
-        //            {
-        //                MaTrangThaiGiaoHang = encryptedData[0],
-        //                TenTrangThai = encryptedData[1]
-        //            });
-        //        }
-        //    }
-
-        //    return encryptedDataList;
-        //}
 
         // Lưu dữ liệu đã giải mã vào tệp văn bản
         private void SaveDecryptedDataToTextFile(List<OrderData_TrangThaiGiaoHang> dataList, string filePath)
