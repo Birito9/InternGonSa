@@ -82,6 +82,8 @@
             dgvNhanVien.RowTemplate.Height = 33;
             dgvNhanVien.Size = new Size(1033, 496);
             dgvNhanVien.TabIndex = 0;
+            dgvNhanVien.RowPostPaint += dgvNhanVien_RowPostPaint;
+            dgvNhanVien.SelectionChanged += dgvNhanVien_SelectionChanged;
             // 
             // MaNhanVien
             // 
@@ -203,7 +205,7 @@
             btnSua.TabIndex = 3;
             btnSua.Text = "Sửa";
             btnSua.UseVisualStyleBackColor = true;
-            btnSua.Click += BtnSua_Click;
+            btnSua.Click += btnSua_Click;
             // 
             // btnNhap
             // 

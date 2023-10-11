@@ -30,5 +30,13 @@
     "Email": "phamthid@gmail.com",
     "SDT": "0765432190",
     "DiaChi": "101 Đường MNO, Quận PQR"
+  },
+  {
+    "MaNhanVien": "NV009",
+    "TenNhanVien": "Nguyễn Văn A",
+    "NgaySinh": "1990-01-15T00:00:00",
+    "Email": "nguyenvana@gmail.com",
+    "SDT": "0123456780",
+    "DiaChi": "123 Đường ABC, Quận XYZ"
   }
 ]
