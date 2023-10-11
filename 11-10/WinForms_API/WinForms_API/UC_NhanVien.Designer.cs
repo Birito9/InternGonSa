@@ -181,6 +181,7 @@
             btnThem.TabIndex = 1;
             btnThem.Text = "Thêm";
             btnThem.UseVisualStyleBackColor = true;
+            btnThem.Click += BtnThem_Click;
             // 
             // btnXoa
             // 
@@ -191,6 +192,7 @@
             btnXoa.TabIndex = 2;
             btnXoa.Text = "Xóa";
             btnXoa.UseVisualStyleBackColor = true;
+            btnXoa.Click += BtnXoa_Click;
             // 
             // btnSua
             // 
@@ -201,6 +203,7 @@
             btnSua.TabIndex = 3;
             btnSua.Text = "Sửa";
             btnSua.UseVisualStyleBackColor = true;
+            btnSua.Click += BtnSua_Click;
             // 
             // btnNhap
             // 

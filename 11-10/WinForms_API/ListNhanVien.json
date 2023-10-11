@@ -1,0 +1,34 @@
+[
+  {
+    "MaNhanVien": "NV005",
+    "TenNhanVien": "Nguyễn Văn A",
+    "NgaySinh": "1990-01-15T00:00:00",
+    "Email": "nguyenvana@gmail.com",
+    "SDT": "0123456789",
+    "DiaChi": "123 Đường ABC, Quận XYZ"
+  },
+  {
+    "MaNhanVien": "NV006",
+    "TenNhanVien": "Trần Thị B",
+    "NgaySinh": "1995-05-20T00:00:00",
+    "Email": "tranthib@gmail.com",
+    "SDT": "0987654321",
+    "DiaChi": "456 Đường XYZ, Quận ABC"
+  },
+  {
+    "MaNhanVien": "NV007",
+    "TenNhanVien": "Lê Văn C",
+    "NgaySinh": "1988-08-08T00:00:00",
+    "Email": "levanc@gmail.com",
+    "SDT": "0369852147",
+    "DiaChi": "789 Đường DEF, Quận UVW"
+  },
+  {
+    "MaNhanVien": "NV008",
+    "TenNhanVien": "Phạm Thị D",
+    "NgaySinh": "1993-03-10T00:00:00",
+    "Email": "phamthid@gmail.com",
+    "SDT": "0765432190",
+    "DiaChi": "101 Đường MNO, Quận PQR"
+  }
+]

@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "SyjpXcchldpiiJ224aoRWFGoPi7bUbjmgNQGUHIZM+zVXkpuCau0Ej/il7j6ni8zMf4r+H6qB+fTO8iQwBq2gQ==",
+  "dgSpecHash": "MX9o4ek2ooD3ufpcV3HEOQkt3eH1QEoFTqUx0wLuimjsoSq8HJz+oaEnK0emGcXZq94Q1p8r4hBubPoSp0G6ig==",
   "success": true,
   "projectFilePath": "D:\\Intern\\GitHub\\repo\\InternGonSa\\11-10\\WinForms_API\\WinForms_API\\GUI.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\nguye\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }
