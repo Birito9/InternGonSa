@@ -1,5 +1,0 @@
-D:\Intern\GitHub\repo\InternGonSa\11-10\CallAPI\DAL\obj\Debug\net7.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
-D:\Intern\GitHub\repo\InternGonSa\11-10\CallAPI\DAL\obj\Debug\net7.0\DAL.AssemblyInfoInputs.cache
-D:\Intern\GitHub\repo\InternGonSa\11-10\CallAPI\DAL\obj\Debug\net7.0\DAL.AssemblyInfo.cs
-D:\Intern\GitHub\repo\InternGonSa\11-10\CallAPI\DAL\obj\Debug\net7.0\DAL.csproj.CoreCompileInputs.cache
-D:\Intern\GitHub\repo\InternGonSa\11-10\CallAPI\DAL\obj\Debug\net7.0\DAL.csproj.AssemblyReference.cache

@@ -22,7 +22,7 @@ namespace GUI
         {
             InitializeComponent();
             dgvNhanVien.AutoGenerateColumns = false;
-            dgvNhanVien.DataSource = LoadDataToGridView;
+            LoadDataToGridView();
         }
         private void LoadDataToGridView()
         {

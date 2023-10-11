@@ -1,5 +1,0 @@
-D:\Intern\GitHub\repo\InternGonSa\11-10\CallAPI\BLL\obj\Debug\net7.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
-D:\Intern\GitHub\repo\InternGonSa\11-10\CallAPI\BLL\obj\Debug\net7.0\BLL.AssemblyInfoInputs.cache
-D:\Intern\GitHub\repo\InternGonSa\11-10\CallAPI\BLL\obj\Debug\net7.0\BLL.AssemblyInfo.cs
-D:\Intern\GitHub\repo\InternGonSa\11-10\CallAPI\BLL\obj\Debug\net7.0\BLL.csproj.CoreCompileInputs.cache
-D:\Intern\GitHub\repo\InternGonSa\11-10\CallAPI\BLL\obj\Debug\net7.0\BLL.csproj.AssemblyReference.cache
