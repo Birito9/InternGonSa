@@ -54,6 +54,7 @@
             txtSDT = new TextBox();
             txtDiaChi = new TextBox();
             dtpNgaySinh = new DateTimePicker();
+            btnXuatJs = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvNhanVien).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
@@ -160,6 +161,7 @@
             tableLayoutPanel1.Controls.Add(txtSDT, 4, 2);
             tableLayoutPanel1.Controls.Add(txtDiaChi, 5, 2);
             tableLayoutPanel1.Controls.Add(dtpNgaySinh, 2, 2);
+            tableLayoutPanel1.Controls.Add(btnXuatJs, 5, 3);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -342,6 +344,17 @@
             dtpNgaySinh.Size = new Size(153, 31);
             dtpNgaySinh.TabIndex = 18;
             // 
+            // btnXuatJs
+            // 
+            btnXuatJs.Anchor = AnchorStyles.None;
+            btnXuatJs.Location = new Point(892, 617);
+            btnXuatJs.Name = "btnXuatJs";
+            btnXuatJs.Size = new Size(120, 50);
+            btnXuatJs.TabIndex = 19;
+            btnXuatJs.Text = "Xuất Json";
+            btnXuatJs.UseVisualStyleBackColor = true;
+            btnXuatJs.Click += btnXuatJs_Click;
+            // 
             // uc_QuanLyNhanVien
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -382,5 +395,6 @@
         private DataGridViewTextBoxColumn Email;
         private DataGridViewTextBoxColumn SDT;
         private DataGridViewTextBoxColumn DiaChi;
+        private Button btnXuatJs;
     }
 }

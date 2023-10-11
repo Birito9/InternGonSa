@@ -7,6 +7,7 @@ using System.Text.RegularExpressions;
 using OfficeOpenXml;
 using OfficeOpenXml.Style;
 using System.Globalization;
+using Newtonsoft.Json;
 
 namespace GUI_QuanLyNhanVien
 {
@@ -450,6 +451,41 @@ namespace GUI_QuanLyNhanVien
 
                 // Vẽ số thứ tự
                 e.Graphics.DrawString(rowIndex.ToString(), e.InheritedRowStyle.Font, brush, x, y);
+            }
+        }
+
+        private void LuuDanhSachNhanVienSangJSON(string tenTepJSON)
+        {
+            if (danhSachNhanVien != null)
+            {
+                try
+                {
+                    // Chuyển danh sách Nhân viên thành chuỗi JSON
+                    string json = JsonConvert.SerializeObject(danhSachNhanVien, Formatting.Indented);
+
+                    // Lưu chuỗi JSON vào tệp
+                    System.IO.File.WriteAllText(tenTepJSON, json);
+                    MessageBox.Show("Lưu dữ liệu thành công!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi lưu dữ liệu dưới dạng JSON: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void btnXuatJs_Click(object sender, EventArgs e)
+        {
+            // Khung hộp thoại cho phép người dùng chọn nơi lưu tệp JSON
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "JSON Files|*.json";
+            saveFileDialog.InitialDirectory = System.IO.Path.GetDirectoryName(System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName);
+            saveFileDialog.FileName = "ListNhanVien.json";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string tenTepJSON = saveFileDialog.FileName;
+                LuuDanhSachNhanVienSangJSON(tenTepJSON);
             }
         }
     }

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "c5TrMG/rshNDDhjr0kTu/VEBlazA8PyENBdfG8e/myyYt0p/Ob0EKd1FRmg1uDabk0665hvjVil3HSO+klQJlg==",
+  "success": true,
+  "projectFilePath": "D:\\Intern\\GitHub\\repo\\InternGonSa\\11-10\\CallAPI\\DAL\\DAL.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nguye\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
