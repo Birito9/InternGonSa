@@ -4,15 +4,25 @@ Task thực tập được giao tại Gonsa
 
 Đây là báo cáo nhiệm vụ thực tập của tôi tại Gonsa. Trong suốt thời gian này, tôi đã tham gia và hoàn thành một số nhiệm vụ được giao
 
-![messenger](https://i.imgur.com/ibBXpBl.png)
+![messenger](https://i.imgur.com/9GHphRh.png) ![messenger](https://i.imgur.com/xsZyIkY.png) 
 
 
 ### Chức năng chính
+Table Quản lý nhân viên
 - **Thêm nhân viên
 - **Xóa nhân viên
 - **Sửa nhân viên
 - **Xuất file Excel
 - **Nhập file Excel
+
+Table Quản Lý Trạng Thái Đơn Hàng
+- **Thêm nhân viên
+- **Xóa nhân viên
+- **Sửa nhân viên
+- **Xuất file Excel
+- **Nhập file Excel
+- **Mã Hóa AES
+- **Giải Mã
 
 Nhiều tính năng mới sẽ được cập nhật thêm sau.
 
