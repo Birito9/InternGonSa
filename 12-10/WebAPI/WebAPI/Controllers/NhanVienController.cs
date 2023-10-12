@@ -13,28 +13,18 @@ namespace WebAPI.Controllers
 
         // GET: api/NhanVien
         [HttpGet]
-        public IActionResult GetNhanViens()
+        public IActionResult GetNhanViens(string maNhanVien = null)
         {
             try
             {
                 string json = System.IO.File.ReadAllText(filePath);
                 var nhanViens = JsonSerializer.Deserialize<List<NhanVien>>(json);
-                return Ok(nhanViens);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
 
-        // GET: api/NhanVien/NV001
-        [HttpGet("{maNhanVien}")]
-        public IActionResult GetNhanVien(string maNhanVien)
-        {
-            try
-            {
-                string json = System.IO.File.ReadAllText(filePath);
-                var nhanViens = JsonSerializer.Deserialize<List<NhanVien>>(json);
+                if (string.IsNullOrEmpty(maNhanVien))
+                {
+                    return Ok(nhanViens);
+                }
+
                 var nhanVien = nhanViens.FirstOrDefault(nv => nv.MaNhanVien == maNhanVien);
                 if (nhanVien == null)
                     return NotFound("Không tìm thấy nhân viên");
@@ -48,15 +38,43 @@ namespace WebAPI.Controllers
 
         // POST: api/NhanVien
         [HttpPost]
-        public IActionResult CreateNhanVien([FromBody] NhanVien nhanVien)
+        public IActionResult CreateOrUpdateNhanViens([FromBody] List<NhanVien> nhanViensToAdd)
         {
             try
             {
                 string json = System.IO.File.ReadAllText(filePath);
-                var nhanViens = JsonSerializer.Deserialize<List<NhanVien>>(json);
-                nhanViens.Add(nhanVien);
-                System.IO.File.WriteAllText(filePath, JsonSerializer.Serialize(nhanViens));
-                return Ok("Nhân viên đã được thêm vào danh sách.");
+                var existingNhanViens = JsonSerializer.Deserialize<List<NhanVien>>(json);
+
+                var maNhanViensAdded = new List<string>();
+
+                foreach (var nv in nhanViensToAdd)
+                {
+                    var existingNv = existingNhanViens.FirstOrDefault(n => n.MaNhanVien == nv.MaNhanVien);
+                    if (existingNv == null)
+                    {
+                        existingNhanViens.Add(nv);
+                        maNhanViensAdded.Add(nv.MaNhanVien);
+                    }
+                    else
+                    {
+                        existingNv.TenNhanVien = nv.TenNhanVien;
+                        existingNv.NgaySinh = nv.NgaySinh;
+                        existingNv.Email = nv.Email;
+                        existingNv.SDT = nv.SDT;
+                        existingNv.DiaChi = nv.DiaChi;
+                    }
+                }
+
+                System.IO.File.WriteAllText(filePath, JsonSerializer.Serialize(existingNhanViens));
+
+                if (maNhanViensAdded.Count > 0)
+                {
+                    return Ok($"Các nhân viên có mã {string.Join(", ", maNhanViensAdded)} đã được thêm vào danh sách.");
+                }
+                else
+                {
+                    return Ok("Các nhân viên đã được cập nhật.");
+                }
             }
             catch (Exception ex)
             {
@@ -64,30 +82,6 @@ namespace WebAPI.Controllers
             }
         }
 
-        // PUT: api/NhanVien/NV001
-        [HttpPut("{maNhanVien}")]
-        public IActionResult UpdateNhanVien(string maNhanVien, [FromBody] NhanVien updatedNhanVien)
-        {
-            try
-            {
-                string json = System.IO.File.ReadAllText(filePath);
-                var nhanViens = JsonSerializer.Deserialize<List<NhanVien>>(json);
-                var nhanVien = nhanViens.FirstOrDefault(nv => nv.MaNhanVien == maNhanVien);
-                if (nhanVien == null)
-                    return NotFound("Không tìm thấy nhân viên");
-                nhanVien.TenNhanVien = updatedNhanVien.TenNhanVien;
-                nhanVien.NgaySinh = updatedNhanVien.NgaySinh;
-                nhanVien.Email = updatedNhanVien.Email;
-                nhanVien.SDT = updatedNhanVien.SDT;
-                nhanVien.DiaChi = updatedNhanVien.DiaChi;
-                System.IO.File.WriteAllText(filePath, JsonSerializer.Serialize(nhanViens));
-                return Ok("Nhân viên đã được cập nhật.");
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
 
         // DELETE: api/NhanVien/NV001
         [HttpDelete("{maNhanVien}")]
