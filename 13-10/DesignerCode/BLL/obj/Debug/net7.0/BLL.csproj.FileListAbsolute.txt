@@ -1,0 +1,17 @@
+D:\Intern\GitHub\repo\InternGonSa\13-10\DesignerCode\BLL\bin\Debug\net7.0\BLL.deps.json
+D:\Intern\GitHub\repo\InternGonSa\13-10\DesignerCode\BLL\bin\Debug\net7.0\BLL.dll
+D:\Intern\GitHub\repo\InternGonSa\13-10\DesignerCode\BLL\bin\Debug\net7.0\BLL.pdb
+D:\Intern\GitHub\repo\InternGonSa\13-10\DesignerCode\BLL\bin\Debug\net7.0\DAL.dll
+D:\Intern\GitHub\repo\InternGonSa\13-10\DesignerCode\BLL\bin\Debug\net7.0\DTO.dll
+D:\Intern\GitHub\repo\InternGonSa\13-10\DesignerCode\BLL\bin\Debug\net7.0\DAL.pdb
+D:\Intern\GitHub\repo\InternGonSa\13-10\DesignerCode\BLL\bin\Debug\net7.0\DTO.pdb
+D:\Intern\GitHub\repo\InternGonSa\13-10\DesignerCode\BLL\obj\Debug\net7.0\BLL.csproj.AssemblyReference.cache
+D:\Intern\GitHub\repo\InternGonSa\13-10\DesignerCode\BLL\obj\Debug\net7.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Intern\GitHub\repo\InternGonSa\13-10\DesignerCode\BLL\obj\Debug\net7.0\BLL.AssemblyInfoInputs.cache
+D:\Intern\GitHub\repo\InternGonSa\13-10\DesignerCode\BLL\obj\Debug\net7.0\BLL.AssemblyInfo.cs
+D:\Intern\GitHub\repo\InternGonSa\13-10\DesignerCode\BLL\obj\Debug\net7.0\BLL.csproj.CoreCompileInputs.cache
+D:\Intern\GitHub\repo\InternGonSa\13-10\DesignerCode\BLL\obj\Debug\net7.0\BLL.csproj.CopyComplete
+D:\Intern\GitHub\repo\InternGonSa\13-10\DesignerCode\BLL\obj\Debug\net7.0\BLL.dll
+D:\Intern\GitHub\repo\InternGonSa\13-10\DesignerCode\BLL\obj\Debug\net7.0\refint\BLL.dll
+D:\Intern\GitHub\repo\InternGonSa\13-10\DesignerCode\BLL\obj\Debug\net7.0\BLL.pdb
+D:\Intern\GitHub\repo\InternGonSa\13-10\DesignerCode\BLL\obj\Debug\net7.0\ref\BLL.dll

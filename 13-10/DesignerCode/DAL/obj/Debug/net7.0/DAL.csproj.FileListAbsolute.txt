@@ -1,0 +1,15 @@
+D:\Intern\GitHub\repo\InternGonSa\13-10\DesignerCode\DAL\bin\Debug\net7.0\DAL.deps.json
+D:\Intern\GitHub\repo\InternGonSa\13-10\DesignerCode\DAL\bin\Debug\net7.0\DAL.dll
+D:\Intern\GitHub\repo\InternGonSa\13-10\DesignerCode\DAL\bin\Debug\net7.0\DAL.pdb
+D:\Intern\GitHub\repo\InternGonSa\13-10\DesignerCode\DAL\bin\Debug\net7.0\DTO.dll
+D:\Intern\GitHub\repo\InternGonSa\13-10\DesignerCode\DAL\bin\Debug\net7.0\DTO.pdb
+D:\Intern\GitHub\repo\InternGonSa\13-10\DesignerCode\DAL\obj\Debug\net7.0\DAL.csproj.AssemblyReference.cache
+D:\Intern\GitHub\repo\InternGonSa\13-10\DesignerCode\DAL\obj\Debug\net7.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Intern\GitHub\repo\InternGonSa\13-10\DesignerCode\DAL\obj\Debug\net7.0\DAL.AssemblyInfoInputs.cache
+D:\Intern\GitHub\repo\InternGonSa\13-10\DesignerCode\DAL\obj\Debug\net7.0\DAL.AssemblyInfo.cs
+D:\Intern\GitHub\repo\InternGonSa\13-10\DesignerCode\DAL\obj\Debug\net7.0\DAL.csproj.CoreCompileInputs.cache
+D:\Intern\GitHub\repo\InternGonSa\13-10\DesignerCode\DAL\obj\Debug\net7.0\DAL.csproj.CopyComplete
+D:\Intern\GitHub\repo\InternGonSa\13-10\DesignerCode\DAL\obj\Debug\net7.0\DAL.dll
+D:\Intern\GitHub\repo\InternGonSa\13-10\DesignerCode\DAL\obj\Debug\net7.0\refint\DAL.dll
+D:\Intern\GitHub\repo\InternGonSa\13-10\DesignerCode\DAL\obj\Debug\net7.0\DAL.pdb
+D:\Intern\GitHub\repo\InternGonSa\13-10\DesignerCode\DAL\obj\Debug\net7.0\ref\DAL.dll

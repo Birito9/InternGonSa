@@ -32,10 +32,10 @@
             toolTip1 = new ToolTip(components);
             tc1 = new TabControl();
             tabPage1 = new TabPage();
-            uc_QuanLyNhanVien1 = new GUI_QuanLyNhanVien.uc_QuanLyNhanVien();
             tabPage2 = new TabPage();
             uC_TrangThaiGiaoHang1 = new FormOrderData_TrangThaiGiaoHang.UC_TrangThaiGiaoHang();
             tableLayoutPanel1 = new TableLayoutPanel();
+            uc_QuanLyNhanVien1 = new GUI_QuanLyNhanVien.uc_QuanLyNhanVien();
             tc1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -66,21 +66,13 @@
             tabPage1.Text = "Quản Lý Nhân Viên";
             tabPage1.UseVisualStyleBackColor = true;
             // 
-            // uc_QuanLyNhanVien1
-            // 
-            uc_QuanLyNhanVien1.Dock = DockStyle.Fill;
-            uc_QuanLyNhanVien1.Location = new Point(3, 3);
-            uc_QuanLyNhanVien1.Name = "uc_QuanLyNhanVien1";
-            uc_QuanLyNhanVien1.Size = new Size(1238, 614);
-            uc_QuanLyNhanVien1.TabIndex = 0;
-            // 
             // tabPage2
             // 
             tabPage2.Controls.Add(uC_TrangThaiGiaoHang1);
             tabPage2.Location = new Point(4, 34);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1244, 620);
+            tabPage2.Size = new Size(192, 62);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Trạng Thái Giao Hàng";
             tabPage2.UseVisualStyleBackColor = true;
@@ -90,7 +82,7 @@
             uC_TrangThaiGiaoHang1.Dock = DockStyle.Fill;
             uC_TrangThaiGiaoHang1.Location = new Point(3, 3);
             uC_TrangThaiGiaoHang1.Name = "uC_TrangThaiGiaoHang1";
-            uC_TrangThaiGiaoHang1.Size = new Size(1238, 614);
+            uC_TrangThaiGiaoHang1.Size = new Size(186, 56);
             uC_TrangThaiGiaoHang1.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -106,6 +98,14 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.Size = new Size(1258, 664);
             tableLayoutPanel1.TabIndex = 0;
+            // 
+            // uc_QuanLyNhanVien1
+            // 
+            uc_QuanLyNhanVien1.Dock = DockStyle.Fill;
+            uc_QuanLyNhanVien1.Location = new Point(3, 3);
+            uc_QuanLyNhanVien1.Name = "uc_QuanLyNhanVien1";
+            uc_QuanLyNhanVien1.Size = new Size(1238, 614);
+            uc_QuanLyNhanVien1.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -129,8 +129,8 @@
         private TabControl tc1;
         private TableLayoutPanel tableLayoutPanel1;
         private TabPage tabPage1;
-        private GUI_QuanLyNhanVien.uc_QuanLyNhanVien uc_QuanLyNhanVien1;
         private TabPage tabPage2;
         private FormOrderData_TrangThaiGiaoHang.UC_TrangThaiGiaoHang uC_TrangThaiGiaoHang1;
+        private GUI_QuanLyNhanVien.uc_QuanLyNhanVien uc_QuanLyNhanVien1;
     }
 }
