@@ -1,24 +1,12 @@
-﻿using DTO;
-using BLL;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Globalization;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Xml;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
-using Label = System.Windows.Forms.Label;
-using OfficeOpenXml;
+﻿using BLL;
+using DTO;
 using Newtonsoft.Json;
+using OfficeOpenXml;
 using OfficeOpenXml.Style;
+using System.Globalization;
+using System.Text.RegularExpressions;
 using Formatting = Newtonsoft.Json.Formatting;
+using Label = System.Windows.Forms.Label;
 
 namespace GUI
 {
@@ -26,6 +14,33 @@ namespace GUI
     {
         private NhanVienBLL BLLNhanVien;
         private List<NhanVienDTO> danhSachNhanVien;
+
+        private DataGridView dgvNhanVien = new DataGridView();
+        private TableLayoutPanel tableLayoutPanel = new TableLayoutPanel();
+        private Button btnThem = new Button();
+        private Button btnXoa = new Button();
+        private Button btnSua = new Button();
+        private Button btnNhap = new Button();
+        private Button btnXuat = new Button();
+        private Button btnXuatJs = new Button();
+        private Label label1 = new Label();
+        private Label label2 = new Label();
+        private Label label3 = new Label();
+        private Label label4 = new Label();
+        private Label label5 = new Label();
+        private Label label6 = new Label();
+        private TextBox txtMaNhanVien = new TextBox();
+        private TextBox txtTenNhanVien = new TextBox();
+        private TextBox txtEmail = new TextBox();
+        private TextBox txtSDT = new TextBox();
+        private TextBox txtDiaChi = new TextBox();
+        private DateTimePicker dtpNgaySinh = new DateTimePicker();
+        private DataGridViewTextBoxColumn MaNhanVien = new DataGridViewTextBoxColumn();
+        private DataGridViewTextBoxColumn TenNhanVien = new DataGridViewTextBoxColumn();
+        private DataGridViewTextBoxColumn NgaySinh = new DataGridViewTextBoxColumn();
+        private DataGridViewTextBoxColumn Email = new DataGridViewTextBoxColumn();
+        private DataGridViewTextBoxColumn SDT = new DataGridViewTextBoxColumn();
+        private DataGridViewTextBoxColumn DiaChi = new DataGridViewTextBoxColumn();
 
         public UC_NhanVien()
         {
@@ -35,32 +50,6 @@ namespace GUI
 
             // Khởi tạo
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            dgvNhanVien = new DataGridView();
-            DataGridViewTextBoxColumn MaNhanVien = new DataGridViewTextBoxColumn();
-            DataGridViewTextBoxColumn TenNhanVien = new DataGridViewTextBoxColumn();
-            DataGridViewTextBoxColumn NgaySinh = new DataGridViewTextBoxColumn();
-            DataGridViewTextBoxColumn Email = new DataGridViewTextBoxColumn();
-            DataGridViewTextBoxColumn SDT = new DataGridViewTextBoxColumn();
-            DataGridViewTextBoxColumn DiaChi = new DataGridViewTextBoxColumn();
-            TableLayoutPanel tableLayoutPanel = new TableLayoutPanel();
-            Button btnThem = new Button();
-            Button btnXoa = new Button();
-            Button btnSua = new Button();
-            Button btnNhap = new Button();
-            Button btnXuat = new Button();
-            Label label1 = new Label();
-            Label label2 = new Label();
-            Label label3 = new Label();
-            Label label4 = new Label();
-            Label label5 = new Label();
-            Label label6 = new Label();
-            txtMaNhanVien = new TextBox();
-            txtTenNhanVien = new TextBox();
-            txtEmail = new TextBox();
-            txtSDT = new TextBox();
-            txtDiaChi = new TextBox();
-            dtpNgaySinh = new DateTimePicker();
-            Button btnXuatJs = new Button();
             Adddatasample();
             LoadDanhSachNhanVien();
             //
@@ -120,7 +109,7 @@ namespace GUI
             dgvNhanVien.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvNhanVien.AutoGenerateColumns = false;
             dgvNhanVien.SelectionChanged += dgvNhanVien_SelectionChanged;
-            //dgvNhanVien.RowPostPaint += DgvNhanVien_RowPostPaint;
+            dgvNhanVien.RowPostPaint += dgvNhanVien_RowPostPaint;
             // Columns Header dgvNhanVien
             // 
             // MaNhanVien
@@ -129,7 +118,7 @@ namespace GUI
             MaNhanVien.DataPropertyName = "MaNhanVien";
             MaNhanVien.HeaderText = "Mã Nhân Viên";
             MaNhanVien.MinimumWidth = 8;
-    
+
             // 
             // TenNhanVien
             // 
@@ -234,7 +223,7 @@ namespace GUI
             // 
             btnXuat.Anchor = AnchorStyles.None;
             btnXuat.Name = "btnXuat";
-            btnXuat.Size = new Size(120,50);
+            btnXuat.Size = new Size(120, 50);
             btnXuat.TabIndex = 6;
             btnXuat.Text = "Xuất";
             btnXuat.UseVisualStyleBackColor = true;
@@ -372,7 +361,7 @@ namespace GUI
             dtpNgaySinh.Name = "dtpNgaySinh";
             dtpNgaySinh.Size = new Size(153, 31);
             dtpNgaySinh.TabIndex = 13;
-                  
+
             //
             // UC_NhanVien
             //
@@ -382,32 +371,6 @@ namespace GUI
 
         }
 
-        private DataGridView dgvNhanVien;
-        private TableLayoutPanel tableLayoutPanel1;
-        private Button btnThem;
-        private Button btnXoa;
-        private Button btnSua;
-        private Button btnNhap;
-        private Button btnXuat;
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Label label5;
-        private Label label6;
-        private TextBox txtMaNhanVien;
-        private TextBox txtTenNhanVien;
-        private TextBox txtEmail;
-        private TextBox txtSDT;
-        private TextBox txtDiaChi;
-        private DateTimePicker dtpNgaySinh;
-        private DataGridViewTextBoxColumn MaNhanVien;
-        private DataGridViewTextBoxColumn TenNhanVien;
-        private DataGridViewTextBoxColumn NgaySinh;
-        private DataGridViewTextBoxColumn Email;
-        private DataGridViewTextBoxColumn SDT;
-        private DataGridViewTextBoxColumn DiaChi;
-        private Button btnXuatJs;
 
         private void Adddatasample()
         {

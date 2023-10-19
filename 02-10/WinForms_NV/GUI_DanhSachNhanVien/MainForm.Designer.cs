@@ -60,11 +60,12 @@
             dgvNhanVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvNhanVien.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvNhanVien.Columns.AddRange(new DataGridViewColumn[] { MaNhanVien, TenNhanVien, NgaySinh, Email, SDT, DiaChi });
-            dgvNhanVien.Location = new Point(20, 23);
+            dgvNhanVien.Dock = DockStyle.Top;
+            dgvNhanVien.Location = new Point(0, 0);
             dgvNhanVien.Margin = new Padding(5, 6, 5, 6);
             dgvNhanVien.Name = "dgvNhanVien";
             dgvNhanVien.RowHeadersWidth = 62;
-            dgvNhanVien.Size = new Size(1000, 385);
+            dgvNhanVien.Size = new Size(1040, 385);
             dgvNhanVien.TabIndex = 0;
             dgvNhanVien.CellClick += dgvNhanVien_CellClick;
             // 
@@ -128,6 +129,7 @@
             // 
             // txtEmail
             // 
+            txtEmail.Anchor = AnchorStyles.None;
             txtEmail.Location = new Point(433, 423);
             txtEmail.Margin = new Padding(5, 6, 5, 6);
             txtEmail.Name = "txtEmail";
@@ -136,6 +138,7 @@
             // 
             // txtSDT
             // 
+            txtSDT.Anchor = AnchorStyles.None;
             txtSDT.Location = new Point(433, 473);
             txtSDT.Margin = new Padding(5, 6, 5, 6);
             txtSDT.Name = "txtSDT";

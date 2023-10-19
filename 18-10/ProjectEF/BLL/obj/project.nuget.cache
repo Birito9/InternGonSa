@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "cbDCWrJZCRPu1016WlTgJ4Oekah8OLojjx3tugKSKWx8iV9fQPtiiDAF19Cp79F/D3sUZMcohgGeLEOX5U+BGA==",
+  "success": true,
+  "projectFilePath": "D:\\Intern\\GitHub\\repo\\InternGonSa\\18-10\\ProjectEF\\BLL\\BLL.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nguye\\.nuget\\packages\\restsharp\\110.2.0\\restsharp.110.2.0.nupkg.sha512",
+    "C:\\Users\\nguye\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
+    "C:\\Users\\nguye\\.nuget\\packages\\system.text.json\\7.0.2\\system.text.json.7.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

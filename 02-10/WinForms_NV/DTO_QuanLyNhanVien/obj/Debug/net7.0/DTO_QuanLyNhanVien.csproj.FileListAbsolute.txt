@@ -20,3 +20,14 @@ D:\Intern\02-10\WinForms_NV\DTO_QuanLyNhanVien\obj\Debug\net7.0\DTO_QuanLyNhanVi
 D:\Intern\02-10\WinForms_NV\DTO_QuanLyNhanVien\obj\Debug\net7.0\refint\DTO_QuanLyNhanVien.dll
 D:\Intern\02-10\WinForms_NV\DTO_QuanLyNhanVien\obj\Debug\net7.0\DTO_QuanLyNhanVien.pdb
 D:\Intern\02-10\WinForms_NV\DTO_QuanLyNhanVien\obj\Debug\net7.0\ref\DTO_QuanLyNhanVien.dll
+D:\Intern\GitHub\repo\InternGonSa\02-10\WinForms_NV\DTO_QuanLyNhanVien\bin\Debug\net7.0\DTO_QuanLyNhanVien.deps.json
+D:\Intern\GitHub\repo\InternGonSa\02-10\WinForms_NV\DTO_QuanLyNhanVien\bin\Debug\net7.0\DTO_QuanLyNhanVien.dll
+D:\Intern\GitHub\repo\InternGonSa\02-10\WinForms_NV\DTO_QuanLyNhanVien\bin\Debug\net7.0\DTO_QuanLyNhanVien.pdb
+D:\Intern\GitHub\repo\InternGonSa\02-10\WinForms_NV\DTO_QuanLyNhanVien\obj\Debug\net7.0\DTO_QuanLyNhanVien.GeneratedMSBuildEditorConfig.editorconfig
+D:\Intern\GitHub\repo\InternGonSa\02-10\WinForms_NV\DTO_QuanLyNhanVien\obj\Debug\net7.0\DTO_QuanLyNhanVien.AssemblyInfoInputs.cache
+D:\Intern\GitHub\repo\InternGonSa\02-10\WinForms_NV\DTO_QuanLyNhanVien\obj\Debug\net7.0\DTO_QuanLyNhanVien.AssemblyInfo.cs
+D:\Intern\GitHub\repo\InternGonSa\02-10\WinForms_NV\DTO_QuanLyNhanVien\obj\Debug\net7.0\DTO_QuanLyNhanVien.csproj.CoreCompileInputs.cache
+D:\Intern\GitHub\repo\InternGonSa\02-10\WinForms_NV\DTO_QuanLyNhanVien\obj\Debug\net7.0\DTO_QuanLyNhanVien.dll
+D:\Intern\GitHub\repo\InternGonSa\02-10\WinForms_NV\DTO_QuanLyNhanVien\obj\Debug\net7.0\refint\DTO_QuanLyNhanVien.dll
+D:\Intern\GitHub\repo\InternGonSa\02-10\WinForms_NV\DTO_QuanLyNhanVien\obj\Debug\net7.0\DTO_QuanLyNhanVien.pdb
+D:\Intern\GitHub\repo\InternGonSa\02-10\WinForms_NV\DTO_QuanLyNhanVien\obj\Debug\net7.0\ref\DTO_QuanLyNhanVien.dll

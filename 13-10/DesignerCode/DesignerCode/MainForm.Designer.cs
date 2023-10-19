@@ -28,30 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            uC_TrangThaiGiaoHang1 = new GUI.UC_TrangThaiGiaoHang();
             SuspendLayout();
-            // 
-            // uC_TrangThaiGiaoHang1
-            // 
-            uC_TrangThaiGiaoHang1.Dock = DockStyle.Fill;
-            uC_TrangThaiGiaoHang1.Location = new Point(0, 0);
-            uC_TrangThaiGiaoHang1.Name = "uC_TrangThaiGiaoHang1";
-            uC_TrangThaiGiaoHang1.Size = new Size(1165, 801);
-            uC_TrangThaiGiaoHang1.TabIndex = 0;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1165, 801);
-            Controls.Add(uC_TrangThaiGiaoHang1);
             Name = "MainForm";
             Text = "Form1";
             ResumeLayout(false);
         }
 
         #endregion
-
-        private GUI.UC_TrangThaiGiaoHang uC_TrangThaiGiaoHang1;
     }
 }

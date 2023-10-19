@@ -1,0 +1,11 @@
+D:\Intern\GitHub\repo\InternGonSa\18-10\ProjectEF\DTO\bin\Debug\net7.0\DTO.deps.json
+D:\Intern\GitHub\repo\InternGonSa\18-10\ProjectEF\DTO\bin\Debug\net7.0\DTO.dll
+D:\Intern\GitHub\repo\InternGonSa\18-10\ProjectEF\DTO\bin\Debug\net7.0\DTO.pdb
+D:\Intern\GitHub\repo\InternGonSa\18-10\ProjectEF\DTO\obj\Debug\net7.0\DTO.GeneratedMSBuildEditorConfig.editorconfig
+D:\Intern\GitHub\repo\InternGonSa\18-10\ProjectEF\DTO\obj\Debug\net7.0\DTO.AssemblyInfoInputs.cache
+D:\Intern\GitHub\repo\InternGonSa\18-10\ProjectEF\DTO\obj\Debug\net7.0\DTO.AssemblyInfo.cs
+D:\Intern\GitHub\repo\InternGonSa\18-10\ProjectEF\DTO\obj\Debug\net7.0\DTO.csproj.CoreCompileInputs.cache
+D:\Intern\GitHub\repo\InternGonSa\18-10\ProjectEF\DTO\obj\Debug\net7.0\DTO.dll
+D:\Intern\GitHub\repo\InternGonSa\18-10\ProjectEF\DTO\obj\Debug\net7.0\refint\DTO.dll
+D:\Intern\GitHub\repo\InternGonSa\18-10\ProjectEF\DTO\obj\Debug\net7.0\DTO.pdb
+D:\Intern\GitHub\repo\InternGonSa\18-10\ProjectEF\DTO\obj\Debug\net7.0\ref\DTO.dll
