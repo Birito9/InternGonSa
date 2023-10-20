@@ -20,34 +20,30 @@ namespace ProjectEF.Controllers
             _context = context;
         }
 
-        // GET: api/NhanVien
+        //GET: api/NhanVien
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<NhanVien>>> GetNhanViens()
+        public async Task<ActionResult<IEnumerable<NhanVien>>> GetNhanViens(string ma = null)
         {
-          if (_context.NhanViens == null)
-          {
-              return NotFound();
-          }
-            return await _context.NhanViens.ToListAsync();
-        }
-
-        // GET: api/NhanVien/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<NhanVien>> GetNhanVien(string id)
-        {
-          if (_context.NhanViens == null)
-          {
-              return NotFound();
-          }
-            var nhanVien = await _context.NhanViens.FindAsync(id);
-
-            if (nhanVien == null)
+            if (ma == null)
             {
-                return NotFound();
+                // Nếu không nhập mã, lấy tất cả dữ liệu
+                return await _context.NhanViens.ToListAsync();
             }
+            else
+            {
+                // Nếu nhập mã, tìm theo mã
+                var nhanVien = await _context.NhanViens.FindAsync(ma);
 
-            return nhanVien;
+                if (nhanVien == null)
+                {
+                    return NotFound();
+                }
+
+                return new List<NhanVien> { nhanVien };
+            }
         }
+
+
 
         // PUT: api/NhanVien/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
