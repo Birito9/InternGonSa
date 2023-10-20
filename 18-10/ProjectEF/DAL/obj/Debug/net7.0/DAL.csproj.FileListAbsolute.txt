@@ -13,3 +13,5 @@ D:\Intern\GitHub\repo\InternGonSa\18-10\ProjectEF\DAL\obj\Debug\net7.0\DAL.dll
 D:\Intern\GitHub\repo\InternGonSa\18-10\ProjectEF\DAL\obj\Debug\net7.0\refint\DAL.dll
 D:\Intern\GitHub\repo\InternGonSa\18-10\ProjectEF\DAL\obj\Debug\net7.0\DAL.pdb
 D:\Intern\GitHub\repo\InternGonSa\18-10\ProjectEF\DAL\obj\Debug\net7.0\ref\DAL.dll
+D:\Intern\GitHub\repo\InternGonSa\18-10\ProjectEF\DAL\bin\Debug\net7.0\DAL.runtimeconfig.json
+D:\Intern\GitHub\repo\InternGonSa\18-10\ProjectEF\DAL\obj\Debug\net7.0\DAL.genruntimeconfig.cache

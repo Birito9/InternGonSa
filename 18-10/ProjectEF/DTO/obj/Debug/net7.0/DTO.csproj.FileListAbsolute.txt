@@ -9,3 +9,6 @@ D:\Intern\GitHub\repo\InternGonSa\18-10\ProjectEF\DTO\obj\Debug\net7.0\DTO.dll
 D:\Intern\GitHub\repo\InternGonSa\18-10\ProjectEF\DTO\obj\Debug\net7.0\refint\DTO.dll
 D:\Intern\GitHub\repo\InternGonSa\18-10\ProjectEF\DTO\obj\Debug\net7.0\DTO.pdb
 D:\Intern\GitHub\repo\InternGonSa\18-10\ProjectEF\DTO\obj\Debug\net7.0\ref\DTO.dll
+D:\Intern\GitHub\repo\InternGonSa\18-10\ProjectEF\DTO\bin\Debug\net7.0\DTO.runtimeconfig.json
+D:\Intern\GitHub\repo\InternGonSa\18-10\ProjectEF\DTO\obj\Debug\net7.0\DTO.csproj.AssemblyReference.cache
+D:\Intern\GitHub\repo\InternGonSa\18-10\ProjectEF\DTO\obj\Debug\net7.0\DTO.genruntimeconfig.cache

@@ -80,7 +80,7 @@
             dgvNhanVien.Name = "dgvNhanVien";
             dgvNhanVien.RowHeadersWidth = 62;
             dgvNhanVien.RowTemplate.Height = 33;
-            dgvNhanVien.Size = new Size(1033, 497);
+            dgvNhanVien.Size = new Size(1128, 497);
             dgvNhanVien.TabIndex = 0;
             dgvNhanVien.RowPostPaint += dgvNhanVien_RowPostPaint;
             // 
@@ -170,13 +170,13 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 6F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 8F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 12F));
-            tableLayoutPanel1.Size = new Size(1039, 681);
+            tableLayoutPanel1.Size = new Size(1134, 681);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // btnThem
             // 
             btnThem.Anchor = AnchorStyles.None;
-            btnThem.Location = new Point(26, 614);
+            btnThem.Location = new Point(34, 614);
             btnThem.Name = "btnThem";
             btnThem.Size = new Size(120, 50);
             btnThem.TabIndex = 1;
@@ -187,7 +187,7 @@
             // btnXoa
             // 
             btnXoa.Anchor = AnchorStyles.None;
-            btnXoa.Location = new Point(199, 614);
+            btnXoa.Location = new Point(223, 614);
             btnXoa.Name = "btnXoa";
             btnXoa.Size = new Size(120, 50);
             btnXoa.TabIndex = 2;
@@ -198,7 +198,7 @@
             // btnSua
             // 
             btnSua.Anchor = AnchorStyles.None;
-            btnSua.Location = new Point(372, 614);
+            btnSua.Location = new Point(411, 614);
             btnSua.Name = "btnSua";
             btnSua.Size = new Size(120, 50);
             btnSua.TabIndex = 3;
@@ -209,7 +209,7 @@
             // btnNhap
             // 
             btnNhap.Anchor = AnchorStyles.None;
-            btnNhap.Location = new Point(545, 614);
+            btnNhap.Location = new Point(599, 614);
             btnNhap.Name = "btnNhap";
             btnNhap.Size = new Size(120, 50);
             btnNhap.TabIndex = 4;
@@ -220,7 +220,7 @@
             // btnXuat
             // 
             btnXuat.Anchor = AnchorStyles.None;
-            btnXuat.Location = new Point(718, 614);
+            btnXuat.Location = new Point(787, 614);
             btnXuat.Name = "btnXuat";
             btnXuat.Size = new Size(120, 50);
             btnXuat.TabIndex = 5;
@@ -232,7 +232,7 @@
             // 
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
-            label1.Location = new Point(25, 510);
+            label1.Location = new Point(33, 510);
             label1.Name = "label1";
             label1.Size = new Size(123, 25);
             label1.TabIndex = 6;
@@ -242,7 +242,7 @@
             // 
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
-            label2.Location = new Point(198, 510);
+            label2.Location = new Point(222, 510);
             label2.Name = "label2";
             label2.Size = new Size(122, 25);
             label2.TabIndex = 7;
@@ -252,7 +252,7 @@
             // 
             label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
-            label3.Location = new Point(386, 510);
+            label3.Location = new Point(424, 510);
             label3.Name = "label3";
             label3.Size = new Size(93, 25);
             label3.TabIndex = 8;
@@ -262,7 +262,7 @@
             // 
             label4.Anchor = AnchorStyles.None;
             label4.AutoSize = true;
-            label4.Location = new Point(578, 510);
+            label4.Location = new Point(632, 510);
             label4.Name = "label4";
             label4.Size = new Size(54, 25);
             label4.TabIndex = 9;
@@ -272,7 +272,7 @@
             // 
             label5.Anchor = AnchorStyles.None;
             label5.AutoSize = true;
-            label5.Location = new Point(717, 510);
+            label5.Location = new Point(786, 510);
             label5.Name = "label5";
             label5.Size = new Size(122, 25);
             label5.TabIndex = 10;
@@ -282,7 +282,7 @@
             // 
             label6.Anchor = AnchorStyles.None;
             label6.AutoSize = true;
-            label6.Location = new Point(918, 510);
+            label6.Location = new Point(1003, 510);
             label6.Name = "label6";
             label6.Size = new Size(68, 25);
             label6.TabIndex = 11;
@@ -294,43 +294,43 @@
             txtMaNhanVien.Location = new Point(20, 553);
             txtMaNhanVien.Margin = new Padding(20, 10, 20, 10);
             txtMaNhanVien.Name = "txtMaNhanVien";
-            txtMaNhanVien.Size = new Size(133, 31);
+            txtMaNhanVien.Size = new Size(149, 31);
             txtMaNhanVien.TabIndex = 12;
             // 
             // txtTenNhanVien
             // 
             txtTenNhanVien.Dock = DockStyle.Fill;
-            txtTenNhanVien.Location = new Point(193, 553);
+            txtTenNhanVien.Location = new Point(209, 553);
             txtTenNhanVien.Margin = new Padding(20, 10, 20, 10);
             txtTenNhanVien.Name = "txtTenNhanVien";
-            txtTenNhanVien.Size = new Size(133, 31);
+            txtTenNhanVien.Size = new Size(148, 31);
             txtTenNhanVien.TabIndex = 13;
             // 
             // txtEmail
             // 
             txtEmail.Dock = DockStyle.Fill;
-            txtEmail.Location = new Point(539, 553);
+            txtEmail.Location = new Point(585, 553);
             txtEmail.Margin = new Padding(20, 10, 20, 10);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(133, 31);
+            txtEmail.Size = new Size(148, 31);
             txtEmail.TabIndex = 15;
             // 
             // txtSDT
             // 
             txtSDT.Dock = DockStyle.Fill;
-            txtSDT.Location = new Point(712, 553);
+            txtSDT.Location = new Point(773, 553);
             txtSDT.Margin = new Padding(20, 10, 20, 10);
             txtSDT.Name = "txtSDT";
-            txtSDT.Size = new Size(133, 31);
+            txtSDT.Size = new Size(148, 31);
             txtSDT.TabIndex = 16;
             // 
             // txtDiaChi
             // 
             txtDiaChi.Dock = DockStyle.Fill;
-            txtDiaChi.Location = new Point(885, 553);
+            txtDiaChi.Location = new Point(961, 553);
             txtDiaChi.Margin = new Padding(20, 10, 20, 10);
             txtDiaChi.Name = "txtDiaChi";
-            txtDiaChi.Size = new Size(134, 31);
+            txtDiaChi.Size = new Size(153, 31);
             txtDiaChi.TabIndex = 17;
             // 
             // dtpNgaySinh
@@ -338,16 +338,16 @@
             dtpNgaySinh.CustomFormat = "dd/MM/yyyy";
             dtpNgaySinh.Dock = DockStyle.Fill;
             dtpNgaySinh.Format = DateTimePickerFormat.Custom;
-            dtpNgaySinh.Location = new Point(356, 553);
+            dtpNgaySinh.Location = new Point(387, 553);
             dtpNgaySinh.Margin = new Padding(10);
             dtpNgaySinh.Name = "dtpNgaySinh";
-            dtpNgaySinh.Size = new Size(153, 31);
+            dtpNgaySinh.Size = new Size(168, 31);
             dtpNgaySinh.TabIndex = 18;
             // 
             // btnXuatJs
             // 
             btnXuatJs.Anchor = AnchorStyles.None;
-            btnXuatJs.Location = new Point(892, 614);
+            btnXuatJs.Location = new Point(977, 614);
             btnXuatJs.Name = "btnXuatJs";
             btnXuatJs.Size = new Size(120, 50);
             btnXuatJs.TabIndex = 19;
@@ -361,7 +361,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(tableLayoutPanel1);
             Name = "UC_NhanVien";
-            Size = new Size(1039, 681);
+            Size = new Size(1134, 681);
             ((System.ComponentModel.ISupportInitialize)dgvNhanVien).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
