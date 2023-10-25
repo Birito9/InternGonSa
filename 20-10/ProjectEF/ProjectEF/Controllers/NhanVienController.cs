@@ -58,9 +58,6 @@ namespace ProjectEF.Controllers
                 return BadRequest("Danh sách nhân viên trống.");
             }
 
-            // Danh sách tạm thời để lưu các nhân viên không trùng mã
-            var uniqueNhanViens = new List<NhanVien>();
-
             foreach (var nhanVien in nhanViens)
             {
                 var validationResult = ValidateNhanVien(nhanVien);
@@ -69,19 +66,21 @@ namespace ProjectEF.Controllers
                     return validationResult;
                 }
 
-                var maNhanVien = GetUnusedMaNhanVien(nhanVien.ChucVu);
-                if (maNhanVien == null)
+                // Kiểm tra xem nhanVien đã tồn tại trong cơ sở dữ liệu hay chưa
+                if (NhanVienExists(nhanVien.MaNhanVien))
                 {
-                    return BadRequest("Không thể tạo mã nhân viên mới.");
+                    // Nếu nhân viên đã tồn tại, hãy cập nhật thông tin của nhân viên này thay vì tạo mới mã nhân viên
+                    _context.Entry(nhanVien).State = EntityState.Modified;
                 }
-
-                nhanVien.MaNhanVien = maNhanVien;
-
-                // Kiểm tra xem nhanVien có tồn tại trong danh sách tạm thời không
-                // Nếu không tồn tại, thêm vào danh sách tạm thời và context
-                if (!uniqueNhanViens.Any(x => x.MaNhanVien == nhanVien.MaNhanVien))
+                else
                 {
-                    uniqueNhanViens.Add(nhanVien);
+                    // Nếu nhân viên chưa tồn tại, tạo mã nhân viên mới
+                    var maNhanVien = GetUnusedMaNhanVien(nhanVien.ChucVu, nhanVien.MaNhanVien);
+                    if (maNhanVien == null)
+                    {
+                        return BadRequest("Không thể tạo mã nhân viên mới.");
+                    }
+                    nhanVien.MaNhanVien = maNhanVien;
                     _context.NhanViens.Add(nhanVien);
                 }
             }
@@ -95,11 +94,11 @@ namespace ProjectEF.Controllers
                 return StatusCode(500, "Lỗi khi lưu vào cơ sở dữ liệu.");
             }
 
-            return Ok(uniqueNhanViens);
+            return Ok(nhanViens);
         }
 
 
-        private string GetUnusedMaNhanVien(string chucVu)
+        private string GetUnusedMaNhanVien(string chucVu, string existingMaNhanVien = null)
         {
             int count = _context.NhanViens.Count(nv => nv.ChucVu == chucVu);
             string prefix = "";
@@ -122,14 +121,17 @@ namespace ProjectEF.Controllers
             for (int i = 1; i <= count + 1; i++)
             {
                 string maNhanVien = $"{prefix}{i:D4}";
-                if (!_context.NhanViens.Any(nv => nv.MaNhanVien == maNhanVien))
+
+                // Nếu mã nhân viên chưa được sử dụng hoặc là mã của nhân viên cần update, trả về mã này
+                if (!_context.NhanViens.Any(nv => nv.MaNhanVien == maNhanVien) || maNhanVien == existingMaNhanVien)
                 {
                     return maNhanVien;
                 }
             }
 
             return null; // Nếu không tìm thấy mã nhân viên chưa được sử dụng, trả về null hoặc xử lý theo ý của bạn
-        }              
+        }
+
 
         private ActionResult ValidateNhanVien(NhanVien nhanVien)
         {
@@ -140,59 +142,13 @@ namespace ProjectEF.Controllers
             return null;
         }
 
-        // PUT: api/NhanVien/UpdateNhanVien/{manhanvien}
-        [HttpPut("UpdateNhanVien/{manhanvien}")]
-        public async Task<IActionResult> PutNhanVien(string manhanvien, [FromBody] NhanVien nhanVien)
+        
+        private bool NhanVienExists(string id)
         {
-            if (manhanvien != nhanVien.MaNhanVien)
-            {
-                return BadRequest("Mã nhân viên không khớp với đầu vào.");
-            }
-
-            if (!NhanVienExists(manhanvien))
-            {
-                return NotFound("Không tìm thấy nhân viên.");
-            }
-
-            var existingNhanVien = await _context.NhanViens.FindAsync(manhanvien);
-            if (existingNhanVien == null)
-            {
-                return NotFound("Không tìm thấy nhân viên.");
-            }
-
-            var updatedNhanVien = new NhanVien
-            {
-                MaNhanVien = existingNhanVien.MaNhanVien,
-                TenNhanVien = nhanVien.TenNhanVien,
-                NgaySinh = nhanVien.NgaySinh,
-                Email = nhanVien.Email,
-                SDT = nhanVien.SDT,
-                DiaChi = nhanVien.DiaChi,
-                ChucVu = nhanVien.ChucVu
-            };
-
-            // Perform automatic update of MaNhanVien based on ChucVu
-            updatedNhanVien.MaNhanVien = GetUnusedMaNhanVien(nhanVien.ChucVu);
-
-            // Remove the existing entity from the context and mark it as deleted
-            _context.Entry(existingNhanVien).State = EntityState.Deleted;
-
-            // Add the updated entity to the context
-            _context.NhanViens.Add(updatedNhanVien);
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                return StatusCode(500, "Lỗi khi cập nhật nhân viên.");
-            }
-
-            return NoContent(); // Indicates a successful update with no response body.
+            return _context.NhanViens != null && _context.NhanViens.Any(e => e.MaNhanVien == id);
         }
 
-
+       
 
 
         // DELETE: api/NhanVien/5
@@ -216,10 +172,7 @@ namespace ProjectEF.Controllers
         }
 
 
-        private bool NhanVienExists(string id)
-        {
-            return _context.NhanViens != null && _context.NhanViens.Any(e => e.MaNhanVien == id);
-        }
+
 
     }
 }

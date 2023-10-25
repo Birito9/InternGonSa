@@ -1,0 +1,11 @@
+D:\Intern\GitHub\repo\InternGonSa\20-10\ProjectEF\DTO_NhanVien\bin\Debug\net7.0\DTO_NhanVien.deps.json
+D:\Intern\GitHub\repo\InternGonSa\20-10\ProjectEF\DTO_NhanVien\bin\Debug\net7.0\DTO_NhanVien.dll
+D:\Intern\GitHub\repo\InternGonSa\20-10\ProjectEF\DTO_NhanVien\bin\Debug\net7.0\DTO_NhanVien.pdb
+D:\Intern\GitHub\repo\InternGonSa\20-10\ProjectEF\DTO_NhanVien\obj\Debug\net7.0\DTO_NhanVien.GeneratedMSBuildEditorConfig.editorconfig
+D:\Intern\GitHub\repo\InternGonSa\20-10\ProjectEF\DTO_NhanVien\obj\Debug\net7.0\DTO_NhanVien.AssemblyInfoInputs.cache
+D:\Intern\GitHub\repo\InternGonSa\20-10\ProjectEF\DTO_NhanVien\obj\Debug\net7.0\DTO_NhanVien.AssemblyInfo.cs
+D:\Intern\GitHub\repo\InternGonSa\20-10\ProjectEF\DTO_NhanVien\obj\Debug\net7.0\DTO_NhanVien.csproj.CoreCompileInputs.cache
+D:\Intern\GitHub\repo\InternGonSa\20-10\ProjectEF\DTO_NhanVien\obj\Debug\net7.0\DTO_NhanVien.dll
+D:\Intern\GitHub\repo\InternGonSa\20-10\ProjectEF\DTO_NhanVien\obj\Debug\net7.0\refint\DTO_NhanVien.dll
+D:\Intern\GitHub\repo\InternGonSa\20-10\ProjectEF\DTO_NhanVien\obj\Debug\net7.0\DTO_NhanVien.pdb
+D:\Intern\GitHub\repo\InternGonSa\20-10\ProjectEF\DTO_NhanVien\obj\Debug\net7.0\ref\DTO_NhanVien.dll
