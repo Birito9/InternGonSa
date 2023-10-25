@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "twbqpZKuMOkEkCYVQS+wfizGmM0QZ2ci9/tJc12uMwl4NXEgidBnj7r/mQV7aQFzO+i+TTYud6aauoYGZL1SMw==",
+  "dgSpecHash": "DeRkWyCfqnPADMAJ00lu0kpm2xwHe8tgeur64IUtbyfyLAgGQufwvcidUcfi2aOZ7BzlUFbXZwx9EA3pRwTRIw==",
   "success": true,
   "projectFilePath": "D:\\Intern\\GitHub\\repo\\InternGonSa\\20-10\\ProjectEF\\WinFormsApp\\GUI.csproj",
   "expectedPackageFiles": [
@@ -125,6 +125,7 @@
     "C:\\Users\\nguye\\.nuget\\packages\\nuget.projectmodel\\6.6.1\\nuget.projectmodel.6.6.1.nupkg.sha512",
     "C:\\Users\\nguye\\.nuget\\packages\\nuget.protocol\\6.6.1\\nuget.protocol.6.6.1.nupkg.sha512",
     "C:\\Users\\nguye\\.nuget\\packages\\nuget.versioning\\6.6.1\\nuget.versioning.6.6.1.nupkg.sha512",
+    "C:\\Users\\nguye\\.nuget\\packages\\restsharp\\110.2.0\\restsharp.110.2.0.nupkg.sha512",
     "C:\\Users\\nguye\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\nguye\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\nguye\\.nuget\\packages\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",

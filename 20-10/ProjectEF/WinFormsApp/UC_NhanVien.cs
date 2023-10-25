@@ -1,14 +1,10 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.AspNetCore.Http.HttpResults;
+using Newtonsoft.Json;
+using RestSharp;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Globalization;
 using System.Windows.Forms;
-using System.Windows.Forms.Design;
 using WebAPI.Models;
 
 namespace GUI
@@ -16,32 +12,48 @@ namespace GUI
     public partial class UC_NhanVien : UserControl
     {
         private string apiUrl = "https://localhost:7126/api/NhanVien";
-        private HttpClient httpClient = new HttpClient();
+        private RestClient restClient = new RestClient();
 
         public UC_NhanVien()
         {
             InitializeComponent();
-            // Thiết lập sự kiện cho nút Thêm
-            btnThem.Click += async (sender, e) => await ThemNhanVien();
+            LoadDanhSachNhanVien();  // Lấy danh sách nhân viên ngay khi form được khởi tạo
 
-            // Thiết lập sự kiện cho nút Xóa
-            btnXoa.Click += async (sender, e) => await XoaNhanVien();
+            // Thêm các mục lựa chọn vào ComboBox
+            cbxChucVu.Items.Add("Backend");
+            cbxChucVu.Items.Add("Frontend");
+            cbxChucVu.Items.Add("Teamlead");
 
-            // Thiết lập sự kiện cho nút Sửa
-            btnSua.Click += async (sender, e) => await SuaNhanVien();
+            // Chọn mục đầu tiên là "Backend"
+            cbxChucVu.SelectedIndex = 0;
 
-            // Thiết lập sự kiện cho nút Xuất Json
-            btnXuatJs.Click += async (sender, e) => await XuatJsonNhanVien();
+            // Thiết lập ComboBox là Read-Only
+            cbxChucVu.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
-        // Lấy danh sách nhân viên từ API
+        private async void LoadDanhSachNhanVien()
+        {
+            var danhSachNhanVien = await LayDanhSachNhanVien();
+            dgvNhanVien.DataSource = danhSachNhanVien;
+        }
+
         private async Task<List<NhanVien>> LayDanhSachNhanVien()
         {
             try
             {
-                var response = await httpClient.GetStringAsync(apiUrl);
-                var nhanViens = Newtonsoft.Json.JsonConvert.DeserializeObject<List<NhanVien>>(response);
-                return nhanViens;
+                var request = new RestRequest(apiUrl + "/GetNV", Method.Get);
+                var response = await restClient.ExecuteAsync(request);
+
+                if (response.IsSuccessful)
+                {
+                    var nhanViens = JsonConvert.DeserializeObject<List<NhanVien>>(response.Content);
+                    return nhanViens;
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi khi lấy danh sách nhân viên: " + response.ErrorMessage, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return new List<NhanVien>();
+                }
             }
             catch (Exception ex)
             {
@@ -50,112 +62,132 @@ namespace GUI
             }
         }
 
-        // Thêm một nhân viên qua API
-        private async Task ThemNhanVien()
+        private async void btnThem_Click(object sender, EventArgs e)
         {
-            // Điền thông tin nhân viên từ giao diện
-            var nhanVien = new NhanVien
+            try
             {
-                MaNhanVien = txtMaNhanVien.Text,
-                TenNhanVien = txtTenNhanVien.Text,
-                NgaySinh = dtpNgaySinh.Value,
-                Email = txtEmail.Text,
-                SDT = txtSDT.Text,
-                DiaChi = txtDiaChi.Text,
-                ChucVu = cbxChucVu.Text
-            };
+                // Lấy thông tin từ các trường dữ liệu
+                string maNhanVien = txtMaNhanVien.Text;
+                string tenNhanVien = txtTenNhanVien.Text;
+                DateTime ngaySinh = dtpNgaySinh.Value;
+                string email = txtEmail.Text;
+                string sdt = txtSDT.Text;
+                string diaChi = txtDiaChi.Text;
+                string chucVu = cbxChucVu.SelectedItem.ToString();
 
-            // Gọi API để thêm nhân viên
-            var jsonContent = new StringContent(Newtonsoft.Json.JsonConvert.SerializeObject(nhanVien), Encoding.UTF8, "application/json");
-            var response = await httpClient.PostAsync(apiUrl, jsonContent);
+                // Tạo đối tượng NhanVien từ thông tin được nhập
+                NhanVien nhanVien = new NhanVien
+                {
+                    MaNhanVien = maNhanVien,
+                    TenNhanVien = tenNhanVien,
+                    NgaySinh = ngaySinh,
+                    Email = email,
+                    SDT = sdt,
+                    DiaChi = diaChi,
+                    ChucVu = chucVu
+                };
 
-            if (response.IsSuccessStatusCode)
-            {
-                MessageBox.Show("Thêm nhân viên thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Tạo một danh sách NhanVien chứa đối tượng nhanVien
+                List<NhanVien> danhSachNhanVien = new List<NhanVien> { nhanVien };
+
+                // Gửi yêu cầu thêm thông tin nhân viên lên máy chủ
+                var request = new RestRequest(apiUrl + "/AddCreNV", Method.Post);
+                request.AddJsonBody(danhSachNhanVien);
+
+                var response = await restClient.ExecuteAsync(request);
+
+                if (response.IsSuccessful)
+                {
+                    MessageBox.Show("Thêm nhân viên thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadDanhSachNhanVien();
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi khi thêm nhân viên: " + response.ErrorMessage, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi thêm nhân viên: " + response.ReasonPhrase, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi khi thêm nhân viên: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            // Làm mới danh sách nhân viên
-            var danhSachNhanVien = await LayDanhSachNhanVien();
-            dgvNhanVien.DataSource = danhSachNhanVien;
         }
 
-        // Xóa một nhân viên qua API
-        private async Task XoaNhanVien()
+
+        private void btnXoa_Click(object sender, EventArgs e)
         {
-            // Lấy mã nhân viên từ ô nhập liệu
-            var maNhanVien = txtMaNhanVien.Text;
-
-            // Gọi API để xóa nhân viên
-            var response = await httpClient.DeleteAsync($"{apiUrl}/{maNhanVien}");
-
-            if (response.IsSuccessStatusCode)
+            try
             {
-                MessageBox.Show("Xóa nhân viên thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Lỗi khi xóa nhân viên: " + response.ReasonPhrase, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                var maNhanVien = txtMaNhanVien.Text;
 
-            // Làm mới danh sách nhân viên
-            var danhSachNhanVien = await LayDanhSachNhanVien();
-            dgvNhanVien.DataSource = danhSachNhanVien;
+                var request = new RestRequest(apiUrl + $"/DeleteNV/{maNhanVien}", Method.Delete);
+
+                var response = restClient.Execute(request);
+
+                if (response.IsSuccessful)
+                {
+                    MessageBox.Show("Xóa nhân viên thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadDanhSachNhanVien();
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi khi xóa nhân viên: " + response.ErrorMessage, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi xóa nhân viên: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        // Sửa thông tin một nhân viên qua API
-        private async Task SuaNhanVien()
+        private void btnSua_Click(object sender, EventArgs e)
         {
-            // Điền thông tin nhân viên từ giao diện
-            var nhanVien = new NhanVien
+            try
             {
-                MaNhanVien = txtMaNhanVien.Text,
-                TenNhanVien = txtTenNhanVien.Text,
-                NgaySinh = dtpNgaySinh.Value,
-                Email = txtEmail.Text,
-                SDT = txtSDT.Text,
-                DiaChi = txtDiaChi.Text,
-                ChucVu = cbxChucVu.Text
-            };
+                var nhanVienSua = new NhanVien
+                {
+                    TenNhanVien = txtTenNhanVien.Text,
+                    NgaySinh = dtpNgaySinh.Value,
+                    Email = txtEmail.Text,
+                    SDT = txtSDT.Text,
+                    DiaChi = txtDiaChi.Text,
+                    ChucVu = cbxChucVu.SelectedItem.ToString()
+                };
 
-            // Gọi API để cập nhật nhân viên
-            var jsonContent = new StringContent(Newtonsoft.Json.JsonConvert.SerializeObject(nhanVien), Encoding.UTF8, "application/json");
-            var response = await httpClient.PutAsync(apiUrl, jsonContent);
+                var request = new RestRequest(apiUrl + "/AddCreNV", Method.Post);
+                request.AddJsonBody(nhanVienSua);
 
-            if (response.IsSuccessStatusCode)
-            {
-                MessageBox.Show("Cập nhật thông tin nhân viên thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                var response = restClient.Execute(request);
+
+                if (response.IsSuccessful)
+                {
+                    MessageBox.Show("Cập nhật thông tin nhân viên thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadDanhSachNhanVien();
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi khi cập nhật thông tin nhân viên: " + response.ErrorMessage, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi cập nhật nhân viên: " + response.ReasonPhrase, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi khi cập nhật thông tin nhân viên: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            // Làm mới danh sách nhân viên
-            var danhSachNhanVien = await LayDanhSachNhanVien();
-            dgvNhanVien.DataSource = danhSachNhanVien;
         }
 
-        // Xuất thông tin một nhân viên dưới dạng JSON
-        private async Task XuatJsonNhanVien()
+
+        private void btnNhap_Click(object sender, EventArgs e)
         {
-            // Lấy mã nhân viên từ ô nhập liệu
-            var maNhanVien = txtMaNhanVien.Text;
 
-            // Gọi API để lấy thông tin nhân viên dưới dạng JSON
-            var response = await httpClient.GetStringAsync($"{apiUrl}/{maNhanVien}");
+        }
 
-            if (response != null)
-            {
-                MessageBox.Show("Thông tin nhân viên dưới dạng JSON:\n" + response, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Không tìm thấy thông tin nhân viên hoặc có lỗi khi lấy dữ liệu.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+        private void btnXuat_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXuatJs_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

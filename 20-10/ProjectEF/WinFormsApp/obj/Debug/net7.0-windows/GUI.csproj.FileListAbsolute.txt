@@ -237,3 +237,4 @@ D:\Intern\GitHub\repo\InternGonSa\20-10\ProjectEF\WinFormsApp\bin\Debug\net7.0-w
 D:\Intern\GitHub\repo\InternGonSa\20-10\ProjectEF\WinFormsApp\bin\Debug\net7.0-windows\ProjectEF.pdb
 D:\Intern\GitHub\repo\InternGonSa\20-10\ProjectEF\WinFormsApp\obj\Debug\net7.0-windows\GUI.csproj.AssemblyReference.cache
 D:\Intern\GitHub\repo\InternGonSa\20-10\ProjectEF\WinFormsApp\obj\Debug\net7.0-windows\GUI.csproj.CopyComplete
+D:\Intern\GitHub\repo\InternGonSa\20-10\ProjectEF\WinFormsApp\bin\Debug\net7.0-windows\RestSharp.dll

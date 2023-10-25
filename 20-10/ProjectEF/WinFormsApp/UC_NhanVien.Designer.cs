@@ -204,6 +204,7 @@
             btnThem.TabIndex = 1;
             btnThem.Text = "Thêm";
             btnThem.UseVisualStyleBackColor = true;
+            btnThem.Click += btnThem_Click;
             // 
             // btnXoa
             // 
@@ -214,6 +215,7 @@
             btnXoa.TabIndex = 2;
             btnXoa.Text = "Xóa";
             btnXoa.UseVisualStyleBackColor = true;
+            btnXoa.Click += btnXoa_Click;
             // 
             // btnSua
             // 
@@ -224,6 +226,7 @@
             btnSua.TabIndex = 3;
             btnSua.Text = "Sửa";
             btnSua.UseVisualStyleBackColor = true;
+            btnSua.Click += btnSua_Click;
             // 
             // btnNhap
             // 
@@ -234,6 +237,7 @@
             btnNhap.TabIndex = 4;
             btnNhap.Text = "Nhập Excel";
             btnNhap.UseVisualStyleBackColor = true;
+            btnNhap.Click += btnNhap_Click;
             // 
             // btnXuat
             // 
@@ -244,6 +248,7 @@
             btnXuat.TabIndex = 5;
             btnXuat.Text = "Xuất Excel";
             btnXuat.UseVisualStyleBackColor = true;
+            btnXuat.Click += btnXuat_Click;
             // 
             // label1
             // 
@@ -370,6 +375,7 @@
             btnXuatJs.TabIndex = 19;
             btnXuatJs.Text = "Xuất Json";
             btnXuatJs.UseVisualStyleBackColor = true;
+            btnXuatJs.Click += btnXuatJs_Click;
             // 
             // label7
             // 
@@ -384,6 +390,7 @@
             // cbxChucVu
             // 
             cbxChucVu.Anchor = AnchorStyles.None;
+            cbxChucVu.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxChucVu.FormattingEnabled = true;
             cbxChucVu.Location = new Point(969, 553);
             cbxChucVu.Name = "cbxChucVu";

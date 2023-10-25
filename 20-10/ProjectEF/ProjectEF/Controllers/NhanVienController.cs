@@ -21,7 +21,7 @@ namespace ProjectEF.Controllers
         }
 
         //GET: api/NhanVien
-        [HttpGet]
+        [HttpGet("GetNV")]
         public async Task<IActionResult> GetNhanViens(string maNhanVien = null)
         {
             try
@@ -45,7 +45,7 @@ namespace ProjectEF.Controllers
             }
         }
 
-        [HttpPost]
+        [HttpPost("AddCreNV")]
         public async Task<ActionResult<IEnumerable<NhanVien>>> PostNhanVien(List<NhanVien> nhanViens)
         {
             if (_context.NhanViens == null)
@@ -152,7 +152,7 @@ namespace ProjectEF.Controllers
 
 
         // DELETE: api/NhanVien/5
-        [HttpDelete("{id}")]
+        [HttpDelete("DeleteNV/{id}")]
         public async Task<IActionResult> DeleteNhanVien(string id)
         {
             if (_context.NhanViens == null)
