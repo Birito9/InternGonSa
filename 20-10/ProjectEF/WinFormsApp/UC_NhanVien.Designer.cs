@@ -95,6 +95,8 @@
             dgvNhanVien.RowTemplate.Height = 33;
             dgvNhanVien.Size = new Size(1128, 497);
             dgvNhanVien.TabIndex = 0;
+            dgvNhanVien.RowPostPaint += dgvNhanVien_RowPostPaint;
+            dgvNhanVien.SelectionChanged += dgvNhanVien_SelectionChanged;
             // 
             // MaNhanVien
             // 

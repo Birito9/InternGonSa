@@ -45,14 +45,78 @@ namespace ProjectEF.Controllers
             }
         }
 
+        ////POST
+        //[HttpPost("AddCreNV")]
+        //public async Task<ActionResult<IEnumerable<NhanVien>>> PostNhanVien(List<NhanVien> nhanViens)
+        //{
+        //    if (nhanViens == null || !nhanViens.Any())
+        //    {
+        //        return BadRequest("Danh sách nhân viên trống.");
+        //    }
+
+        //    foreach (var nhanVien in nhanViens)
+        //    {
+        //        // Kiểm tra xem nhanVien đã tồn tại trong cơ sở dữ liệu hay chưa
+        //        if (NhanVienExists(nhanVien.MaNhanVien))
+        //        {
+        //            var validationResult = ValidateNhanVien(nhanVien);
+        //            if (validationResult != null)
+        //            {
+        //                return validationResult;
+        //            }
+        //            // Kiểm tra xem chức vụ đã thay đổi
+        //            var existingNhanVien = _context.NhanViens.FirstOrDefault(nv => nv.MaNhanVien == nhanVien.MaNhanVien);
+        //            if (existingNhanVien != null && existingNhanVien.ChucVu != nhanVien.ChucVu)
+        //            {
+        //                // Xóa nhân viên hiện tại
+        //                _context.NhanViens.Remove(existingNhanVien);
+
+        //                // Tạo mã nhân viên mới dựa trên chức vụ mới
+        //                var maNhanVienMoi = GetUnusedMaNhanVien(nhanVien.ChucVu, nhanVien.MaNhanVien);
+        //                if (maNhanVienMoi == null)
+        //                {
+        //                    return BadRequest("Không thể tạo mã nhân viên mới.");
+        //                }
+        //                nhanVien.MaNhanVien = maNhanVienMoi;
+
+        //                // Thêm nhân viên mới
+        //                _context.NhanViens.Add(nhanVien);
+        //            }
+        //            else
+        //            {
+        //                // Cập nhật thông tin của nhân viên
+        //                _context.Entry(nhanVien).State = EntityState.Modified;
+        //            }
+        //        }
+        //        else
+        //        {
+        //            // Nhân viên chưa tồn tại, tạo mã nhân viên mới dựa trên chức vụ
+        //            var maNhanVien = GetUnusedMaNhanVien(nhanVien.ChucVu, nhanVien.MaNhanVien);
+        //            if (maNhanVien == null)
+        //            {
+        //                return BadRequest("Không thể tạo mã nhân viên mới.");
+        //            }
+        //            nhanVien.MaNhanVien = maNhanVien;
+        //            _context.NhanViens.Add(nhanVien);
+        //        }
+        //    }
+
+        //    try
+        //    {
+        //        await _context.SaveChangesAsync();
+        //    }
+        //    catch (DbUpdateException)
+        //    {
+        //        return StatusCode(500, "Lỗi khi lưu vào cơ sở dữ liệu.");
+        //    }
+
+        //    return Ok(nhanViens);
+        //}
+
         [HttpPost("AddCreNV")]
         public async Task<ActionResult<IEnumerable<NhanVien>>> PostNhanVien(List<NhanVien> nhanViens)
         {
-            if (_context.NhanViens == null)
-            {
-                return Problem("Entity set 'NhanVienContext.NhanViens' is null.");
-            }
-
+            // Kiểm tra nếu danh sách nhân viên trống hoặc null
             if (nhanViens == null || !nhanViens.Any())
             {
                 return BadRequest("Danh sách nhân viên trống.");
@@ -60,33 +124,37 @@ namespace ProjectEF.Controllers
 
             foreach (var nhanVien in nhanViens)
             {
-                var validationResult = ValidateNhanVien(nhanVien);
-                if (validationResult != null)
-                {
-                    return validationResult;
-                }
-
-                // Kiểm tra xem nhanVien đã tồn tại trong cơ sở dữ liệu hay chưa
+                // Kiểm tra xem nếu nhân viên đã tồn tại trong cơ sở dữ liệu
                 if (NhanVienExists(nhanVien.MaNhanVien))
                 {
-                    // Nếu nhân viên đã tồn tại, hãy cập nhật thông tin của nhân viên này thay vì tạo mới mã nhân viên
+                    // Kiểm tra hợp lệ của thông tin nhân viên
+                    var validationResult = ValidateNhanVien(nhanVien);
+                    if (validationResult != null)
+                    {
+                        return validationResult;
+                    }
+
+                    // Cập nhật thông tin của nhân viên
                     _context.Entry(nhanVien).State = EntityState.Modified;
                 }
                 else
                 {
-                    // Nếu nhân viên chưa tồn tại, tạo mã nhân viên mới
+                    // Nhân viên chưa tồn tại, tạo mã nhân viên mới dựa trên chức vụ
                     var maNhanVien = GetUnusedMaNhanVien(nhanVien.ChucVu, nhanVien.MaNhanVien);
                     if (maNhanVien == null)
                     {
                         return BadRequest("Không thể tạo mã nhân viên mới.");
                     }
                     nhanVien.MaNhanVien = maNhanVien;
+
+                    // Thêm nhân viên mới vào cơ sở dữ liệu
                     _context.NhanViens.Add(nhanVien);
                 }
             }
 
             try
             {
+                // Lưu các thay đổi vào cơ sở dữ liệu
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateException)
@@ -94,6 +162,7 @@ namespace ProjectEF.Controllers
                 return StatusCode(500, "Lỗi khi lưu vào cơ sở dữ liệu.");
             }
 
+            // Trả về kết quả thành công
             return Ok(nhanViens);
         }
 
@@ -101,21 +170,7 @@ namespace ProjectEF.Controllers
         private string GetUnusedMaNhanVien(string chucVu, string existingMaNhanVien = null)
         {
             int count = _context.NhanViens.Count(nv => nv.ChucVu == chucVu);
-            string prefix = "";
-            switch (chucVu)
-            {
-                case "Backend":
-                    prefix = "BE";
-                    break;
-                case "Frontend":
-                    prefix = "FE";
-                    break;
-                case "Teamlead":
-                    prefix = "TL";
-                    break;
-                default:
-                    return null;
-            }
+            string prefix = GetChucVuPrefix(chucVu);
 
             // Tìm mã nhân viên chưa được sử dụng
             for (int i = 1; i <= count + 1; i++)
@@ -132,6 +187,20 @@ namespace ProjectEF.Controllers
             return null; // Nếu không tìm thấy mã nhân viên chưa được sử dụng, trả về null hoặc xử lý theo ý của bạn
         }
 
+        private string GetChucVuPrefix(string chucVu)
+        {
+            switch (chucVu)
+            {
+                case "Backend":
+                    return "BE";
+                case "Frontend":
+                    return "FE";
+                case "Teamlead":
+                    return "TL";
+                default:
+                    return string.Empty;
+            }
+        }
 
         private ActionResult ValidateNhanVien(NhanVien nhanVien)
         {
@@ -142,13 +211,13 @@ namespace ProjectEF.Controllers
             return null;
         }
 
-        
         private bool NhanVienExists(string id)
         {
             return _context.NhanViens != null && _context.NhanViens.Any(e => e.MaNhanVien == id);
         }
 
-       
+
+
 
 
         // DELETE: api/NhanVien/5

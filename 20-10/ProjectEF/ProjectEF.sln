@@ -5,9 +5,7 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectEF", "ProjectEF\ProjectEF.csproj", "{A06AC6CE-CBFA-4A5F-A575-10FB640AE21B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "WinFormsApp\GUI.csproj", "{1BA374C1-6100-43C6-9D72-50AECCB6CF45}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO_NhanVien", "DTO_NhanVien\DTO_NhanVien.csproj", "{AFD947A7-AC0A-463F-BA97-E7CD0A8E4C10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GUI", "WinFormsApp\GUI.csproj", "{1BA374C1-6100-43C6-9D72-50AECCB6CF45}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +21,6 @@ Global
 		{1BA374C1-6100-43C6-9D72-50AECCB6CF45}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BA374C1-6100-43C6-9D72-50AECCB6CF45}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BA374C1-6100-43C6-9D72-50AECCB6CF45}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AFD947A7-AC0A-463F-BA97-E7CD0A8E4C10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AFD947A7-AC0A-463F-BA97-E7CD0A8E4C10}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AFD947A7-AC0A-463F-BA97-E7CD0A8E4C10}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AFD947A7-AC0A-463F-BA97-E7CD0A8E4C10}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

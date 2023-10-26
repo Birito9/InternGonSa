@@ -4,6 +4,10 @@ namespace WebAPI.Models
 {
     public class NhanVienContext : DbContext
     {
+        public NhanVienContext()
+        {
+        }
+
         public NhanVienContext(DbContextOptions<NhanVienContext> options) : base(options)
         {
 

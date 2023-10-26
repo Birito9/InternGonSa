@@ -51,6 +51,7 @@
             // 
             // uC_NhanVien1
             // 
+            uC_NhanVien1.Dock = DockStyle.Fill;
             uC_NhanVien1.Location = new Point(3, 3);
             uC_NhanVien1.Name = "uC_NhanVien1";
             uC_NhanVien1.Size = new Size(1252, 658);
