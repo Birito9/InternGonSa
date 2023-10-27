@@ -177,6 +177,20 @@ namespace GUI
                 // Bấm lần đầu (Lấy dữ liệu và hiển thị)
                 txtMaNhanVien.ReadOnly = true; // Bật trạng thái chỉ đọc
                 isEditing = false;
+                // Lấy thông tin từ dòng được chọn trong DataGridView và đổ vào các TextBox
+                DataGridViewRow dr = dgvNhanVien.CurrentRow;
+                if (dr != null)
+                {
+                    // Lấy thông tin từ dòng được chọn và đổ vào các TextBox
+                    txtMaNhanVien.Text = (dr.Cells[0].Value ?? string.Empty).ToString();
+                    txtTenNhanVien.Text = (dr.Cells[1].Value ?? string.Empty).ToString();
+                    dtpNgaySinh.Value = Convert.ToDateTime(dr.Cells[2].Value ?? DateTime.Now);
+                    txtEmail.Text = (dr.Cells[3].Value ?? string.Empty).ToString();
+                    txtSDT.Text = (dr.Cells[4].Value ?? string.Empty).ToString();
+                    txtDiaChi.Text = (dr.Cells[5].Value ?? string.Empty).ToString();
+                    cbxChucVu.SelectedItem = dr.Cells[6].Value.ToString();
+
+                }
             }
             else
             {
@@ -469,15 +483,26 @@ namespace GUI
                 txtEmail.Text = (dr.Cells[3].Value ?? string.Empty).ToString();
                 txtSDT.Text = (dr.Cells[4].Value ?? string.Empty).ToString();
                 txtDiaChi.Text = (dr.Cells[5].Value ?? string.Empty).ToString();
-                // Đặt giá trị chức vụ từ cột dữ liệu hoặc chọn giá trị phù hợp trong ComboBox
-                if (dr.Cells[6].Value != null)
+                string chucVu = dr.Cells["ChucVu"].Value?.ToString();
+                if (!string.IsNullOrEmpty(chucVu))
                 {
-                    cbxChucVu.SelectedItem = dr.Cells[6].Value.ToString();
+                    switch (chucVu)
+                    {
+                        case "Backend":
+                            cbxChucVu.SelectedItem = "Backend";
+                            break;
+                        case "Frontend":
+                            cbxChucVu.SelectedItem = "Frontend";
+                            break;
+                        case "Teamlead":
+                            cbxChucVu.SelectedItem = "Teamlead";
+                            break;
+                        default:
+                            // Xử lý trường hợp khác nếu cần
+                            break;
+                    }
                 }
-                else
-                {
-                    cbxChucVu.SelectedIndex = 0; // Đặt giá trị mặc định cho ComboBox chức vụ nếu không có giá trị nào
-                }
+
             }
         }
 
