@@ -1,17 +1,10 @@
-﻿using Microsoft.AspNetCore.Http.HttpResults;
-using Microsoft.Data.SqlClient;
+﻿using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using OfficeOpenXml;
 using RestSharp;
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Text.RegularExpressions;
-using System.Windows.Forms;
 using WebAPI.Models;
-using Microsoft.Extensions.Configuration;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace GUI
 {
@@ -189,7 +182,6 @@ namespace GUI
                     txtSDT.Text = (dr.Cells[4].Value ?? string.Empty).ToString();
                     txtDiaChi.Text = (dr.Cells[5].Value ?? string.Empty).ToString();
                     cbxChucVu.SelectedItem = dr.Cells[6].Value.ToString();
-
                 }
             }
             else
@@ -339,8 +331,6 @@ namespace GUI
             }
         }
 
-
-
         private void btnXuat_Click(object sender, EventArgs e)
         {
             using (SaveFileDialog saveFileDialog = new SaveFileDialog())
@@ -385,17 +375,12 @@ namespace GUI
                                 }
                             }
                         }
-
-
                         // Lưu tệp Excel
                         package.SaveAs(new System.IO.FileInfo(filePath));
                     }
                 }
             }
         }
-
-
-
 
         private void btnXuatJs_Click(object sender, EventArgs e)
         {
@@ -505,9 +490,6 @@ namespace GUI
 
             }
         }
-
-
-
         private void dgvNhanVien_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             // Lấy số thứ tự của hàng (bắt đầu từ 1)

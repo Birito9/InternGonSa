@@ -12,6 +12,6 @@ namespace WebAPI.Models
         {
 
         }
-        public DbSet<NhanVien> NhanViens { get; set;}
+        public DbSet<NhanVien> NhanViens { get; set; }
     }
 }

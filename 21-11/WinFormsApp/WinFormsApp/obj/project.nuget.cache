@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "PwbWm0qt0ux5bGaTC91UMnZ7uR9SCrh1/AWcEvsjnLrnxpdFzf0wKM9f4Tmdh2sYQ6sJs1FEcKEa3XlQH6FMlw==",
+  "success": true,
+  "projectFilePath": "D:\\Intern\\GitHub\\repo\\InternGonSa\\21-11\\WinFormsApp\\WinFormsApp\\GUI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nguye\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.25\\microsoft.windowsdesktop.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\nguye\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.25\\microsoft.netcore.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\nguye\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.25\\microsoft.aspnetcore.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\nguye\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.25\\microsoft.netcore.app.host.win-x64.6.0.25.nupkg.sha512"
+  ],
+  "logs": []
+}

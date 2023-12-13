@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UC_Login.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Text_Box_Custom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UC_Main.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UC_QLDonNhap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UC_QLDonXuat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UC_QLNV.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UC_QuanLyKho.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UC_User.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
